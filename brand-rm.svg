@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Logo RM">
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#07111d" />
+      <stop offset="55%" stop-color="#0b1827" />
+      <stop offset="100%" stop-color="#040912" />
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#dffcff" />
+      <stop offset="45%" stop-color="#7ae7ff" />
+      <stop offset="100%" stop-color="#00adb5" />
+    </linearGradient>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M20 0H0V20" fill="none" stroke="#1a3146" stroke-opacity=".42" stroke-width="1" />
+    </pattern>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="blur1" />
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5.5" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <clipPath id="letters">
+      <text x="26" y="168" font-family="Arial, Helvetica, sans-serif" font-size="118" font-weight="900">RM</text>
+    </clipPath>
+  </defs>
+
+  <rect width="256" height="256" rx="56" fill="url(#bg)" />
+  <rect width="256" height="256" rx="56" fill="url(#grid)" opacity=".55" />
+
+  <g stroke="#12314a" stroke-linecap="round" stroke-width="3">
+    <path d="M20 72H78" />
+    <path d="M20 186H96" />
+    <path d="M164 34V88" />
+    <path d="M224 142V220" />
+    <path d="M120 212H236" />
+    <circle cx="78" cy="72" fill="#12314a" r="4" />
+    <circle cx="96" cy="186" fill="#12314a" r="4" />
+    <circle cx="164" cy="88" fill="#12314a" r="4" />
+    <circle cx="224" cy="142" fill="#12314a" r="4" />
+  </g>
+
+  <g clip-path="url(#letters)" opacity=".58">
+    <path d="M18 88H120" fill="none" stroke="#baf6ff" stroke-width="3" stroke-opacity=".4" />
+    <path d="M24 126H146" fill="none" stroke="#9cefff" stroke-width="3" stroke-opacity=".34" />
+    <path d="M40 162H228" fill="none" stroke="#baf6ff" stroke-width="3" stroke-opacity=".34" />
+    <path d="M68 58V186" fill="none" stroke="#9cefff" stroke-width="3" stroke-opacity=".34" />
+    <path d="M112 44V188" fill="none" stroke="#baf6ff" stroke-width="3" stroke-opacity=".28" />
+    <path d="M182 50V196" fill="none" stroke="#9cefff" stroke-width="3" stroke-opacity=".3" />
+    <path d="M208 44V178" fill="none" stroke="#baf6ff" stroke-width="3" stroke-opacity=".28" />
+    <circle cx="112" cy="126" fill="#e9ffff" r="4" />
+    <circle cx="182" cy="162" fill="#d8fbff" r="4" />
+    <circle cx="68" cy="88" fill="#c6f9ff" r="4" />
+  </g>
+
+  <g filter="url(#softGlow)">
+    <text
+      x="26"
+      y="168"
+      fill="none"
+      font-family="Arial, Helvetica, sans-serif"
+      font-size="118"
+      font-weight="900"
+      stroke="url(#glow)"
+      stroke-linejoin="round"
+      stroke-width="6.6"
+    >
+      RM
+    </text>
+    <text
+      x="26"
+      y="168"
+      fill="none"
+      font-family="Arial, Helvetica, sans-serif"
+      font-size="118"
+      font-weight="900"
+      opacity=".72"
+      stroke="#f1ffff"
+      stroke-linejoin="round"
+      stroke-width="1.2"
+    >
+      RM
+    </text>
+  </g>
+</svg>

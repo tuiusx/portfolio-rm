@@ -1,0 +1,637 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ricardo Martins | Desenvolvedor Full Stack</title>
+    <meta
+      name="description"
+      content="Portfólio de Ricardo Martins com projetos em React, Node.js e aplicações web voltadas a produto, organização e impacto."
+    />
+    <meta name="theme-color" content="#222831" />
+    <meta name="author" content="Ricardo Martins" />
+    <meta property="og:title" content="Ricardo Martins | Desenvolvedor Full Stack" />
+    <meta
+      property="og:description"
+      content="Projetos, stack e formas de contato de Ricardo Martins."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/42036320?v=4" />
+    <meta property="og:image:alt" content="Foto de perfil de Ricardo Martins" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ricardo Martins | Desenvolvedor Full Stack" />
+    <meta
+      name="twitter:description"
+      content="Projetos, stack e formas de contato de Ricardo Martins."
+    />
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/42036320?v=4" />
+    <link rel="icon" type="image/svg+xml" href="brand-rm.svg" />
+    <link rel="shortcut icon" href="brand-rm.svg" />
+    <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/42036320?v=4" />
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-theme="dark">
+    <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+    <div id="app">
+      <nav class="site-shell">
+        <div class="container nav-inner">
+          <a href="#home" class="brand" aria-label="Ir para o topo">
+            <img src="brand-rm.svg" alt="" class="brand-logo" aria-hidden="true" />
+          </a>
+          <div class="nav-links" aria-label="Navegação principal">
+            <a href="#home" class="nav-link" aria-current="page">Início</a>
+            <a href="#about" class="nav-link">Sobre</a>
+            <a href="#projects" class="nav-link">Projetos</a>
+            <a href="#skills" class="nav-link">Stack</a>
+            <a href="#credentials" class="nav-link">Credenciais</a>
+            <a href="#contact" class="nav-link">Contato</a>
+            <button
+              id="theme-toggle"
+              class="theme-toggle"
+              type="button"
+              aria-label="Ativar tema claro"
+              aria-pressed="false"
+            >
+              <i id="theme-icon" data-lucide="sun"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <main id="main-content" tabindex="-1">
+        <section id="home" class="hero-section" aria-labelledby="hero-name">
+          <div class="hero-blob hero-blob-one" aria-hidden="true"></div>
+          <div class="hero-blob hero-blob-two" aria-hidden="true"></div>
+          <div class="container hero-grid">
+            <div class="hero-copy reveal-up reveal-on-scroll">
+              <span class="eyebrow">Desenvolvedor full stack</span>
+              <h1 id="hero-name">Ricardo Martins</h1>
+              <p id="hero-title" class="hero-role hero-fade-line">React, Node.js e interfaces pensadas para produto real.</p>
+              <p id="hero-bio" class="hero-text responsive-copy hero-fade-line">
+                Construo experiências web claras, funcionais e prontas para crescer, unindo front-end forte, APIs bem organizadas e atenção ao uso real da tela.
+              </p>
+              <p class="hero-availability hero-fade-line">Disponível para projetos, colaborações e oportunidades remotas.</p>
+
+              <div class="cta-row hero-fade-line" id="hero-actions">
+                <a href="#projects" class="button button-primary">Ver projetos</a>
+                <a href="https://github.com/tuiusx" class="button button-secondary" target="_blank" rel="noreferrer">
+                  <i data-lucide="github"></i>
+                  GitHub
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/tuius-martins/"
+                  class="button button-secondary"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <i data-lucide="linkedin"></i>
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+
+            <div class="hero-side reveal-side reveal-on-scroll">
+              <div class="profile-frame">
+                <div class="profile-photo-wrap">
+                  <img
+                    id="profile-image"
+                    class="profile-image"
+                    src="https://avatars.githubusercontent.com/u/42036320?v=4"
+                    alt="Foto de perfil de Ricardo Martins"
+                    loading="eager"
+                    decoding="async"
+                    fetchpriority="high"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" class="section-block" aria-labelledby="about-heading">
+          <div class="container about-grid">
+            <div class="section-heading reveal-up reveal-on-scroll">
+              <span class="section-kicker">Sobre mim</span>
+              <h2 id="about-heading" data-scramble-reveal>Clareza para construir, critério para evoluir.</h2>
+              <p class="responsive-copy">
+                Meu foco é construir produtos com boa estrutura visual, navegação simples e base técnica
+                organizada. Gosto de combinar interface bem pensada com lógica que aguenta crescer.
+              </p>
+            </div>
+
+            <div class="about-cards reveal-up reveal-on-scroll">
+              <article class="about-card">
+                <i data-lucide="target"></i>
+                <h3>Foco atual</h3>
+                <p>Projetos web completos, com front-end forte, integração de API e uma experiência mais profissional.</p>
+              </article>
+              <article class="about-card">
+                <i data-lucide="briefcase"></i>
+                <h3>O que busco</h3>
+                <p>Freelas, vagas e colaborações em que eu possa entregar valor real e continuar evoluindo rápido.</p>
+              </article>
+              <article class="about-card">
+                <i data-lucide="sparkles"></i>
+                <h3>Como eu construo</h3>
+                <p>Começo pela estrutura, penso no uso real da tela e depois refino visual, interação e consistência.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" class="section-block section-alt" aria-labelledby="projects-heading">
+          <div class="container">
+            <div class="section-heading reveal-up reveal-on-scroll">
+              <span class="section-kicker">Projetos em destaque</span>
+              <h2 id="projects-heading" data-scramble-reveal>Projetos com entrega real.</h2>
+              <p class="responsive-copy">
+                Reuni projetos do meu GitHub para mostrar como penso, construo e entrego soluções com mais clareza.
+              </p>
+            </div>
+
+            <div class="project-grid">
+              <article class="project-card reveal-up reveal-on-scroll">
+                <div class="project-media">
+                  <img
+                    data-project-image
+                    data-has-readme-image="false"
+                    src="https://opengraph.githubassets.com/1/tuiusx/ProjetoLMS"
+                    alt="Preview do projeto ProjetoLMS"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="project-top">
+                  <span class="status-badge">Projeto acadêmico</span>
+                  <div class="project-icon">
+                    <i data-lucide="graduation-cap"></i>
+                  </div>
+                </div>
+                <h3 id="project1-title">ProjetoLMS</h3>
+                <p id="project1-desc" class="project-summary">
+                  Projeto acadêmico em Django voltado à organização de cursos, disciplinas, notícias e acesso de alunos em uma experiência web mais estruturada.
+                </p>
+                <p class="project-proof">
+                  <strong>Mostra:</strong> organização de conteúdo acadêmico, estrutura em Django e navegação orientada a fluxo.
+                </p>
+                <button class="project-toggle" type="button" data-project-toggle aria-expanded="false">
+                  Ver mais
+                </button>
+                <div class="tag-row">
+                  <span class="tag">Python</span>
+                  <span class="tag tag-muted">Django</span>
+                  <span class="tag tag-muted">SQL</span>
+                </div>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/tuiusx/ProjetoLMS"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Abrir repositório do projeto ProjetoLMS no GitHub"
+                  >
+                    Ver repositório
+                  </a>
+                </div>
+              </article>
+
+              <article class="project-card reveal-up reveal-on-scroll">
+                <div class="project-media">
+                  <img
+                    data-project-image
+                    data-has-readme-image="true"
+                    src="https://raw.githubusercontent.com/tuiusx/coffee-delivery/main/.github/background.png"
+                    alt="Preview do projeto coffee-delivery"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="project-top">
+                  <span class="status-badge">Front-end</span>
+                  <div class="project-icon">
+                    <i data-lucide="coffee"></i>
+                  </div>
+                </div>
+                <h3 id="project2-title">coffee-delivery</h3>
+                <p id="project2-desc" class="project-summary">
+                  Interface de e-commerce focada em catálogo, experiência de compra e fluxo de entrega, com atenção especial a composição visual e usabilidade.
+                </p>
+                <p class="project-proof">
+                  <strong>Mostra:</strong> cuidado com UI, consistência visual e construção de jornada de compra.
+                </p>
+                <button class="project-toggle" type="button" data-project-toggle aria-expanded="false">
+                  Ver mais
+                </button>
+                <div class="tag-row">
+                  <span class="tag">React</span>
+                  <span class="tag tag-muted">TypeScript</span>
+                  <span class="tag tag-muted">UI</span>
+                </div>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/tuiusx/coffee-delivery"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Abrir repositório do projeto coffee-delivery no GitHub"
+                  >
+                    Ver repositório
+                  </a>
+                </div>
+              </article>
+
+              <article class="project-card reveal-up reveal-on-scroll">
+                <div class="project-media">
+                  <img
+                    data-project-image
+                    data-has-readme-image="false"
+                    src="https://opengraph.githubassets.com/1/tuiusx/be-the-hero"
+                    alt="Preview do projeto be-the-hero"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="project-top">
+                  <span class="status-badge">Full stack</span>
+                  <div class="project-icon">
+                    <i data-lucide="shield-plus"></i>
+                  </div>
+                </div>
+                <h3 id="project3-title">be-the-hero</h3>
+                <p id="project3-desc" class="project-summary">
+                  Aplicação full stack que conecta ONGs a pessoas interessadas em ajudar, unindo painel web, API e experiência mobile em um fluxo completo.
+                </p>
+                <p class="project-proof">
+                  <strong>Mostra:</strong> integração entre web, API REST e mobile em uma solução com proposta social.
+                </p>
+                <button class="project-toggle" type="button" data-project-toggle aria-expanded="false">
+                  Ver mais
+                </button>
+                <div class="tag-row">
+                  <span class="tag">Node.js</span>
+                  <span class="tag tag-muted">React</span>
+                  <span class="tag tag-muted">React Native</span>
+                </div>
+                <div class="tag-row tag-row-secondary">
+                  <span class="tag tag-muted">Express</span>
+                  <span class="tag tag-muted">SQLite</span>
+                  <span class="tag tag-muted">API REST</span>
+                </div>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/tuiusx/be-the-hero"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Abrir repositório do projeto be-the-hero no GitHub"
+                  >
+                    Ver repositório
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" class="section-block" aria-labelledby="skills-heading">
+          <div class="container">
+            <div class="section-heading reveal-up reveal-on-scroll">
+              <span class="section-kicker">Stack e processo</span>
+              <h2 id="skills-heading" data-scramble-reveal>Stack que sustenta meu trabalho.</h2>
+            </div>
+
+            <div class="skills-grid">
+              <article class="skill-card reveal-up reveal-on-scroll">
+                <i data-lucide="code"></i>
+                <div>
+                  <span id="skill1">TypeScript</span>
+                  <p>Tipagem, escalabilidade e manutenção de código.</p>
+                </div>
+              </article>
+              <article class="skill-card reveal-up reveal-on-scroll">
+                <i data-lucide="layers"></i>
+                <div>
+                  <span id="skill2">React</span>
+                  <p>Interfaces componentizadas e mais fluidas.</p>
+                </div>
+              </article>
+              <article class="skill-card reveal-up reveal-on-scroll">
+                <i data-lucide="server"></i>
+                <div>
+                  <span id="skill3">Node.js</span>
+                  <p>APIs, regras de negócio e integrações.</p>
+                </div>
+              </article>
+              <article class="skill-card reveal-up reveal-on-scroll">
+                <i data-lucide="database"></i>
+                <div>
+                  <span id="skill4">Banco de dados</span>
+                  <p>Persistência, estrutura e confiabilidade.</p>
+                </div>
+              </article>
+              <article class="skill-card reveal-up reveal-on-scroll">
+                <i data-lucide="git-branch"></i>
+                <div>
+                  <span id="skill5">Git e GitHub</span>
+                  <p>Versionamento, histórico e colaboração.</p>
+                </div>
+              </article>
+              <article class="skill-card reveal-up reveal-on-scroll">
+                <i data-lucide="pen-tool"></i>
+                <div>
+                  <span id="skill6">UI e organização</span>
+                  <p>Layout claro, hierarquia visual e consistência.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="credentials" class="section-block section-alt" aria-labelledby="credentials-heading">
+          <div class="container">
+            <div class="section-heading reveal-up reveal-on-scroll">
+              <span class="section-kicker">Certificados e diplomas</span>
+              <h2 id="credentials-heading" data-scramble-reveal>Base técnica em construção constante.</h2>
+              <p class="responsive-copy">
+                Uma visão direta da minha formação, dos cursos que concluí e do compromisso que tenho com evolução contínua.
+              </p>
+            </div>
+
+            <div class="credentials-subhead reveal-up reveal-on-scroll">
+              <h3 data-scramble-reveal>Formação acadêmica</h3>
+              <p>Formação técnica e acadêmica que sustenta minha base em desenvolvimento, tecnologia e visão de produto.</p>
+            </div>
+
+            <div class="credentials-grid credentials-grid-academic">
+              <article class="credential-card reveal-up reveal-on-scroll">
+                <div class="credential-icon">
+                  <i data-lucide="monitor-smartphone"></i>
+                </div>
+                <span class="credential-type">Curso técnico</span>
+                <h3>Técnico em Informática</h3>
+                <p>Formação técnica no SENAC, com base em informática, tecnologia e fundamentos que fortaleceram meu início na área.</p>
+                <div class="credential-meta">
+                  <span>SENAC</span>
+                  <span>Formação técnica</span>
+                </div>
+              </article>
+
+              <article class="credential-card reveal-up reveal-on-scroll">
+                <div class="credential-icon">
+                  <i data-lucide="graduation-cap"></i>
+                </div>
+                <span class="credential-type">Graduação</span>
+                <h3>Análise e Desenvolvimento de Sistemas</h3>
+                <p>Graduação na IMPACTA com foco em desenvolvimento, estrutura de software e construção de soluções para ambiente real.</p>
+                <div class="credential-meta">
+                  <span>IMPACTA</span>
+                  <span>Ensino superior</span>
+                </div>
+              </article>
+
+              <article class="credential-card reveal-up reveal-on-scroll">
+                <div class="credential-icon">
+                  <i data-lucide="book-open"></i>
+                </div>
+                <span class="credential-type">Graduação em andamento</span>
+                <h3>Sistemas da Informação</h3>
+                <p>Formação em andamento na IMPACTA, ampliando repertório em negócio, tecnologia, produto e tomada de decisão.</p>
+                <div class="credential-meta">
+                  <span>IMPACTA</span>
+                  <span>Em andamento</span>
+                </div>
+              </article>
+            </div>
+
+            <div class="credentials-subhead reveal-up reveal-on-scroll">
+              <h3 data-scramble-reveal>Certificados e badges</h3>
+              <p>Links oficiais para validação dos certificados que você compartilhou.</p>
+            </div>
+
+            <div class="credentials-grid">
+              <article class="credential-card reveal-up reveal-on-scroll">
+                <div class="credential-icon">
+                  <i data-lucide="award"></i>
+                </div>
+                <span class="credential-type">Certificado</span>
+                <h3>HTML e CSS</h3>
+                <p>Micro certificado da Rocketseat focado em estrutura da web, semântica, acessibilidade, CSS, grid, flexbox e responsividade.</p>
+                <button class="project-toggle" type="button" data-credential-toggle aria-expanded="false">
+                  Ver mais
+                </button>
+                <div class="credential-meta">
+                  <span>Rocketseat</span>
+                  <span>Microcertificado</span>
+                  <span>12 horas</span>
+                  <span>21/06/2024</span>
+                </div>
+                <div class="credential-links">
+                  <a
+                    href="https://app.rocketseat.com.br/certificates/92c80924-6cc7-4a95-b130-f90b468e91b2"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Ver certificado
+                  </a>
+                </div>
+              </article>
+
+              <article class="credential-card reveal-up reveal-on-scroll">
+                <div class="credential-icon">
+                  <i data-lucide="award"></i>
+                </div>
+                <span class="credential-type">Certificado</span>
+                <h3>Clean Code</h3>
+                <p>Curso da Rocketseat sobre princípios e técnicas de código limpo aplicadas a JavaScript, ReactJS e Node.js.</p>
+                <button class="project-toggle" type="button" data-credential-toggle aria-expanded="false">
+                  Ver mais
+                </button>
+                <div class="credential-meta">
+                  <span>Rocketseat</span>
+                  <span>Curso</span>
+                  <span>3 horas</span>
+                  <span>24/05/2024</span>
+                </div>
+                <div class="credential-links">
+                  <a
+                    href="https://app.rocketseat.com.br/certificates/84d72a67-43a9-40b7-a3ba-b9706da63897"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Ver certificado
+                  </a>
+                </div>
+              </article>
+
+              <article class="credential-card reveal-up reveal-on-scroll">
+                <div class="credential-icon">
+                  <i data-lucide="award"></i>
+                </div>
+                <span class="credential-type">Certificado</span>
+                <h3>Desafio de Micro SaaS</h3>
+                <p>Evento da Rocketseat com desenvolvimento de aplicação em Next.js, autenticação, Firebase, Stripe, Mercado Pago e webhooks.</p>
+                <button class="project-toggle" type="button" data-credential-toggle aria-expanded="false">
+                  Ver mais
+                </button>
+                <div class="credential-meta">
+                  <span>Rocketseat</span>
+                  <span>Evento</span>
+                  <span>5 horas</span>
+                  <span>19/04/2025</span>
+                </div>
+                <div class="credential-links">
+                  <a
+                    href="https://app.rocketseat.com.br/certificates/ee2c2a32-3cd5-418a-88c7-6ebfaedcf34c"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Ver certificado
+                  </a>
+                </div>
+              </article>
+
+              <article class="credential-card reveal-up reveal-on-scroll">
+                <div class="credential-icon">
+                  <i data-lucide="award"></i>
+                </div>
+                <span class="credential-type">Certificado</span>
+                <h3>NLW Pocket: JavaScript - Full-stack Intermediário</h3>
+                <p>Evento da Rocketseat com Node.js, TypeScript, Fastify, PostgreSQL, Docker, Zod, React, Vite, Tailwind CSS e TanStack Query.</p>
+                <button class="project-toggle" type="button" data-credential-toggle aria-expanded="false">
+                  Ver mais
+                </button>
+                <div class="credential-meta">
+                  <span>Rocketseat</span>
+                  <span>Evento</span>
+                  <span>5 horas</span>
+                  <span>16/09/2024</span>
+                </div>
+                <div class="credential-links">
+                  <a
+                    href="https://app.rocketseat.com.br/certificates/9c581457-04e4-4314-869d-d301049d5a9c"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Ver certificado
+                  </a>
+                </div>
+              </article>
+
+              <article class="credential-card reveal-up reveal-on-scroll">
+                <div class="credential-icon">
+                  <i data-lucide="book-open-check"></i>
+                </div>
+                <span class="credential-type">Origamid</span>
+                <h3>UI Design para Iniciantes</h3>
+                <p>Curso da Origamid com foco em fundamentos de interface, composição visual e construção de layouts para produtos digitais.</p>
+                <button class="project-toggle" type="button" data-credential-toggle aria-expanded="false">
+                  Ver mais
+                </button>
+                <div class="credential-meta">
+                  <span>Origamid</span>
+                  <span>34 horas</span>
+                  <span>05/01/2022 a 02/03/2022</span>
+                </div>
+                <div class="credential-links">
+                  <a
+                    href="https://www.origamid.com/certificate/1d1ab360/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Ver certificado
+                  </a>
+                </div>
+              </article>
+
+              <article class="credential-card reveal-up reveal-on-scroll">
+                <div class="credential-icon">
+                  <i data-lucide="badge-check"></i>
+                </div>
+                <span class="credential-type">Badge</span>
+                <h3>AWS Academy Graduate - Cloud Foundations</h3>
+                <p>Badge emitido pela Amazon Web Services Training and Certification, validado publicamente pela Credly.</p>
+                <button class="project-toggle" type="button" data-credential-toggle aria-expanded="false">
+                  Ver mais
+                </button>
+                <div class="credential-meta">
+                  <span>Credly</span>
+                  <span>AWS</span>
+                  <span>Badge verificado</span>
+                </div>
+                <div class="credential-links">
+                  <a
+                    href="https://www.credly.com/badges/b8bab515-be4e-4728-8176-dad26f136eff?source=linked_in_profile"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Ver badge
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="section-block" aria-labelledby="contact-heading">
+          <div class="container contact-card reveal-up reveal-on-scroll">
+            <span class="section-kicker">Contato</span>
+            <h2 id="contact-heading">Se curtiu meu perfil, vamos conversar.</h2>
+            <p>
+              Estou aberto a freelas, colaborações e oportunidades. Se fizer sentido para o seu projeto,
+              me chama no LinkedIn, no GitHub ou por e-mail.
+            </p>
+            <div class="contact-actions">
+              <a
+                id="email-link"
+                href="mailto:ricardo.martins@aluno.impacta.edu.br"
+                class="button button-primary"
+                aria-label="Enviar e-mail para Ricardo Martins"
+              >
+                <i data-lucide="mail"></i>
+                <span id="email-text" data-email-display="label">Enviar e-mail</span>
+              </a>
+              <a
+                id="linkedin-link"
+                  href="https://www.linkedin.com/in/tuius-martins/"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="button button-secondary"
+                  aria-label="Abrir perfil de Ricardo Martins no LinkedIn"
+                >
+                  <i data-lucide="linkedin"></i>
+                  Abrir LinkedIn
+              </a>
+              <a
+                id="github-link"
+                  href="https://github.com/tuiusx"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="button button-secondary"
+                  aria-label="Abrir perfil de Ricardo Martins no GitHub"
+                >
+                  <i data-lucide="github"></i>
+                  Abrir GitHub
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <p id="footer-text">© 2026 Ricardo Martins. Portfólio pensado para mostrar projetos, processo e identidade.</p>
+          <div class="footer-links">
+            <a href="https://github.com/tuiusx" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/tuius-martins/" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
