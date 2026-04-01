@@ -33,7 +33,6 @@ const root = document.documentElement;
 const body = document.body;
 const themeToggle = document.getElementById("theme-toggle");
 const themeIcon = document.getElementById("theme-icon");
-const scrambleCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 const fallbackProjectImages = [
   "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
   "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
@@ -95,56 +94,6 @@ function renderIcons() {
       icon.setAttribute("focusable", "false");
     });
   }
-}
-
-function animateTextReveal(element) {
-  if (!element) {
-    return;
-  }
-
-  const finalText = element.dataset.textValue || element.textContent.trim();
-  if (!finalText) {
-    return;
-  }
-
-  element.dataset.textValue = finalText;
-  const lockedHeight = element.offsetHeight;
-  if (lockedHeight > 0) {
-    element.style.minHeight = `${lockedHeight}px`;
-  }
-
-  const revealSteps = finalText.length + 10;
-  let iteration = 0;
-
-  if (element._scrambleFrame) {
-    window.clearInterval(element._scrambleFrame);
-  }
-
-  element._scrambleFrame = window.setInterval(() => {
-    const nextText = finalText
-      .split("")
-      .map((character, index) => {
-        if (character === " ") {
-          return " ";
-        }
-
-        if (index < iteration) {
-          return finalText[index];
-        }
-
-        return scrambleCharacters[Math.floor(Math.random() * scrambleCharacters.length)];
-      })
-      .join("");
-
-    element.textContent = nextText;
-    iteration += 0.35;
-
-    if (iteration >= revealSteps) {
-      window.clearInterval(element._scrambleFrame);
-      element.textContent = finalText;
-      element.style.minHeight = "";
-    }
-  }, 42);
 }
 
 function animateOpacityLetterReveal(element) {
@@ -298,7 +247,7 @@ function applyConfig(config = {}) {
 }
 
 function runHeroTitleAnimation() {
-  animateTextReveal(document.getElementById("hero-name"));
+  animateOpacityLetterReveal(document.getElementById("hero-name"));
 }
 
 function runHeroSecondaryReveal() {

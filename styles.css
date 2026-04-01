@@ -1002,6 +1002,25 @@ body[data-theme="light"] .credential-meta span {
   gap: 1rem;
 }
 
+body[data-device="desktop"] .nav-head {
+  display: contents;
+}
+
+body[data-device="desktop"] .brand {
+  order: 0;
+}
+
+body[data-device="desktop"] .nav-links {
+  order: 1;
+  flex: 1 1 auto;
+  justify-content: flex-end;
+}
+
+body[data-device="desktop"] .theme-toggle {
+  order: 2;
+  margin-left: 0;
+}
+
 body[data-device="desktop"] .hero-grid {
   grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
 }
