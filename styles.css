@@ -210,6 +210,13 @@ a:focus-visible {
   padding: 1rem 0;
 }
 
+.nav-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
 .brand,
 .theme-toggle,
 .project-icon,
@@ -1001,6 +1008,11 @@ body[data-device="tablet"] .nav-inner {
   flex-direction: column;
 }
 
+body[data-device="tablet"] .nav-head,
+body[data-device="mobile"] .nav-head {
+  width: 100%;
+}
+
 body[data-device="tablet"] .nav-links {
   justify-content: flex-start;
 }
@@ -1031,6 +1043,7 @@ body[data-device="mobile"] .footer-inner {
 }
 
 body[data-device="mobile"] .nav-links {
+  width: 100%;
   justify-content: flex-start;
 }
 
@@ -1055,7 +1068,6 @@ body[data-device="mobile"] .hero-role {
 }
 
 body[data-device="mobile"] .button,
-body[data-device="mobile"] .theme-toggle,
 body[data-device="mobile"] .contact-actions .button {
   width: 100%;
 }
@@ -1292,6 +1304,11 @@ body[data-device="mobile"] .project-toggle {
     align-items: flex-start;
   }
 
+  .nav-head,
+  .nav-links {
+    width: 100%;
+  }
+
   .nav-links {
     justify-content: flex-start;
   }
@@ -1306,10 +1323,6 @@ body[data-device="mobile"] .project-toggle {
   }
 
   .button,
-  .theme-toggle {
-    width: 100%;
-  }
-
   .contact-actions .button {
     width: 100%;
   }
