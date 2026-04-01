@@ -215,6 +215,7 @@ a:focus-visible {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  flex-wrap: nowrap;
 }
 
 .brand,
@@ -295,6 +296,8 @@ a:focus-visible {
   background: var(--surface);
   color: var(--text-main);
   cursor: pointer;
+  flex: 0 0 auto;
+  margin-left: auto;
 }
 
 .theme-toggle:hover {
@@ -1011,6 +1014,9 @@ body[data-device="tablet"] .nav-inner {
 body[data-device="tablet"] .nav-head,
 body[data-device="mobile"] .nav-head {
   width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
 }
 
 body[data-device="tablet"] .nav-links {
@@ -1045,6 +1051,16 @@ body[data-device="mobile"] .footer-inner {
 body[data-device="mobile"] .nav-links {
   width: 100%;
   justify-content: flex-start;
+}
+
+body[data-device="mobile"] .brand,
+body[data-device="tablet"] .brand {
+  justify-self: start;
+}
+
+body[data-device="mobile"] .theme-toggle,
+body[data-device="tablet"] .theme-toggle {
+  justify-self: end;
 }
 
 body[data-device="mobile"] .hero-grid,
@@ -1307,6 +1323,12 @@ body[data-device="mobile"] .project-toggle {
   .nav-head,
   .nav-links {
     width: 100%;
+  }
+
+  .nav-head {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
   }
 
   .nav-links {
