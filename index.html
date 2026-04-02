@@ -35,28 +35,41 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260401-2" />
+    <link rel="stylesheet" href="styles.css?v=20260402-1" />
   </head>
   <body data-theme="dark">
     <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
     <div id="app">
       <nav class="site-shell">
+        <div class="nav-backdrop" data-nav-backdrop aria-hidden="true"></div>
         <div class="container nav-inner">
           <div class="nav-head">
             <a href="#home" class="brand" aria-label="Ir para o topo">
               <img src="brand-rm.svg" alt="" class="brand-logo" aria-hidden="true" />
             </a>
-            <button
-              id="theme-toggle"
-              class="theme-toggle"
-              type="button"
-              aria-label="Ativar tema claro"
-              aria-pressed="false"
-            >
-              <i id="theme-icon" data-lucide="sun"></i>
-            </button>
+            <div class="nav-actions">
+              <button
+                id="theme-toggle"
+                class="theme-toggle"
+                type="button"
+                aria-label="Ativar tema claro"
+                aria-pressed="false"
+              >
+                <i id="theme-icon" data-lucide="sun"></i>
+              </button>
+              <button
+                id="nav-toggle"
+                class="nav-toggle"
+                type="button"
+                aria-label="Abrir menu"
+                aria-controls="site-navigation"
+                aria-expanded="false"
+              >
+                <i id="nav-toggle-icon" data-lucide="menu"></i>
+              </button>
+            </div>
           </div>
-          <div class="nav-links" aria-label="Navegação principal">
+          <div id="site-navigation" class="nav-links" aria-label="Navegação principal">
             <a href="#home" class="nav-link" aria-current="page">Início</a>
             <a href="#about" class="nav-link">Sobre</a>
             <a href="#projects" class="nav-link">Projetos</a>
@@ -105,12 +118,46 @@
                   <img
                     id="profile-image"
                     class="profile-image"
-                    src="https://avatars.githubusercontent.com/u/42036320?v=4"
+                    src="assets/ricardo-hero.png"
                     alt="Foto de perfil de Ricardo Martins"
                     loading="eager"
                     decoding="async"
                     fetchpriority="high"
                   />
+                  <div class="profile-stack" aria-hidden="true">
+                    <span class="tech-badge tech-badge-ts">
+                      <i data-lucide="braces"></i>
+                      <span>TS</span>
+                    </span>
+                    <span class="tech-badge tech-badge-react">
+                      <i data-lucide="atom"></i>
+                      <span>React</span>
+                    </span>
+                    <span class="tech-badge tech-badge-node">
+                      <i data-lucide="server"></i>
+                      <span>Node</span>
+                    </span>
+                    <span class="tech-badge tech-badge-docker">
+                      <svg viewBox="0 0 64 48" aria-hidden="true" focusable="false">
+                        <rect x="10" y="15" width="8" height="8" rx="1"></rect>
+                        <rect x="20" y="15" width="8" height="8" rx="1"></rect>
+                        <rect x="30" y="15" width="8" height="8" rx="1"></rect>
+                        <rect x="40" y="15" width="8" height="8" rx="1"></rect>
+                        <rect x="20" y="5" width="8" height="8" rx="1"></rect>
+                        <rect x="30" y="5" width="8" height="8" rx="1"></rect>
+                        <path d="M49 20c1.8-4.4 6-5.7 8-5.8-.3 3.6-1.5 5.8-3.8 7.4 2.4.6 4.2.4 5.8-.1-1.4 8.8-8.7 14.5-18 14.5H22.5C14.4 36 8.9 31 7 23.2h39.8c.9 0 1.6-.2 2.2-.5Z"></path>
+                      </svg>
+                      <span>Docker</span>
+                    </span>
+                    <span class="tech-badge tech-badge-sql">
+                      <i data-lucide="database"></i>
+                      <span>SQL</span>
+                    </span>
+                    <span class="tech-badge tech-badge-api">
+                      <i data-lucide="cpu"></i>
+                      <span>API</span>
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -634,6 +681,6 @@
       </footer>
     </div>
 
-    <script src="script.js?v=20260401-2"></script>
+    <script src="script.js?v=20260402-1"></script>
   </body>
 </html>

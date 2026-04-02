@@ -31,6 +31,11 @@ const themeState = {
 
 const root = document.documentElement;
 const body = document.body;
+const siteShell = document.querySelector(".site-shell");
+const navLinks = document.getElementById("site-navigation");
+const navBackdrop = document.querySelector("[data-nav-backdrop]");
+const navToggle = document.getElementById("nav-toggle");
+const navToggleIcon = document.getElementById("nav-toggle-icon");
 const themeToggle = document.getElementById("theme-toggle");
 const themeIcon = document.getElementById("theme-icon");
 const fallbackProjectImages = [
@@ -80,6 +85,13 @@ function getDeviceType() {
 function applyDeviceLayout() {
   const deviceType = getDeviceType();
   body.setAttribute("data-device", deviceType);
+
+  if (deviceType !== "mobile") {
+    setMobileMenuState(false);
+    return;
+  }
+
+  setMobileMenuState(siteShell?.classList.contains("is-menu-open") || false);
 }
 
 function getSavedTheme() {
@@ -94,6 +106,30 @@ function renderIcons() {
       icon.setAttribute("focusable", "false");
     });
   }
+}
+
+function isMobileMenuLayout() {
+  return body.getAttribute("data-device") === "mobile";
+}
+
+function setMobileMenuState(isOpen) {
+  if (!siteShell || !navLinks || !navToggle) {
+    return;
+  }
+
+  const shouldOpen = Boolean(isOpen) && isMobileMenuLayout();
+
+  siteShell.classList.toggle("is-menu-open", shouldOpen);
+  body.classList.toggle("mobile-nav-open", shouldOpen);
+  navLinks.setAttribute("aria-hidden", String(!shouldOpen && isMobileMenuLayout()));
+  navToggle.setAttribute("aria-expanded", String(shouldOpen));
+  navToggle.setAttribute("aria-label", shouldOpen ? "Fechar menu" : "Abrir menu");
+
+  if (navToggleIcon) {
+    navToggleIcon.setAttribute("data-lucide", shouldOpen ? "x" : "menu");
+  }
+
+  renderIcons();
 }
 
 function animateOpacityLetterReveal(element) {
@@ -449,6 +485,261 @@ function setupActiveNavSection() {
   window.addEventListener("resize", requestActiveSectionUpdate);
 }
 
+function setupMobileNav() {
+  if (!siteShell || !navLinks || !navToggle) {
+    return;
+  }
+
+  navToggle.addEventListener("click", () => {
+    if (!isMobileMenuLayout()) {
+      return;
+    }
+
+    const isOpen = siteShell.classList.contains("is-menu-open");
+    setMobileMenuState(!isOpen);
+  });
+
+  if (navBackdrop) {
+    navBackdrop.addEventListener("click", () => {
+      setMobileMenuState(false);
+    });
+  }
+
+  navLinks.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", () => {
+      setMobileMenuState(false);
+    });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      setMobileMenuState(false);
+    }
+  });
+}
+
+function setupFloatingTechBadges() {
+  const photoWrap = document.querySelector(".profile-photo-wrap");
+  const badgeLayer = document.querySelector(".profile-stack");
+  const badges = badgeLayer ? Array.from(badgeLayer.querySelectorAll(".tech-badge")) : [];
+
+  if (!photoWrap || !badgeLayer || !badges.length) {
+    return;
+  }
+
+  if (setupFloatingTechBadges._frameId) {
+    window.cancelAnimationFrame(setupFloatingTechBadges._frameId);
+    setupFloatingTechBadges._frameId = 0;
+  }
+
+  const prefersReducedMotion =
+    window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  badges.forEach((badge) => {
+    badge.style.setProperty("--tech-float-x", "0px");
+    badge.style.setProperty("--tech-float-y", "0px");
+    badge.style.setProperty("--tech-float-rotate", "0deg");
+    badge.style.setProperty("--tech-float-scale", "1");
+  });
+
+  if (prefersReducedMotion) {
+    return;
+  }
+
+  const motionMap = [
+    {
+      className: "tech-badge-ts",
+      startX: 0.08,
+      startY: 0.14,
+      rangeRotate: 5,
+      minSpeed: 24,
+      maxSpeed: 34,
+      maxRotateSpeed: 7
+    },
+    {
+      className: "tech-badge-react",
+      startX: 0.72,
+      startY: 0.1,
+      rangeRotate: 7,
+      minSpeed: 26,
+      maxSpeed: 36,
+      maxRotateSpeed: 8
+    },
+    {
+      className: "tech-badge-node",
+      startX: 0.06,
+      startY: 0.72,
+      rangeRotate: 6,
+      minSpeed: 23,
+      maxSpeed: 33,
+      maxRotateSpeed: 7
+    },
+    {
+      className: "tech-badge-docker",
+      startX: 0.42,
+      startY: 0.08,
+      rangeRotate: 6,
+      minSpeed: 24,
+      maxSpeed: 35,
+      maxRotateSpeed: 7
+    },
+    {
+      className: "tech-badge-sql",
+      startX: 0.7,
+      startY: 0.8,
+      rangeRotate: 5,
+      minSpeed: 22,
+      maxSpeed: 31,
+      maxRotateSpeed: 6
+    },
+    {
+      className: "tech-badge-api",
+      startX: 0.76,
+      startY: 0.44,
+      rangeRotate: 7,
+      minSpeed: 25,
+      maxSpeed: 35,
+      maxRotateSpeed: 8
+    }
+  ];
+
+  function getMotionConfig(badge) {
+    return (
+      motionMap.find((config) => badge.classList.contains(config.className)) || {
+        startX: 0.18,
+        startY: 0.18,
+        rangeRotate: 6,
+        minSpeed: 24,
+        maxSpeed: 34,
+        maxRotateSpeed: 7
+      }
+    );
+  }
+
+  function randomBetween(min, max) {
+    return min + Math.random() * (max - min);
+  }
+
+  function createVelocity(config, hitX = 0, hitY = 0) {
+    let dirX =
+      hitX === -1 ? 1 : hitX === 1 ? -1 : randomBetween(-1, 1);
+    let dirY =
+      hitY === -1 ? 1 : hitY === 1 ? -1 : randomBetween(-1, 1);
+
+    if (Math.abs(dirX) < 0.18) {
+      dirX = dirX < 0 ? -0.18 : 0.18;
+    }
+
+    if (Math.abs(dirY) < 0.18) {
+      dirY = dirY < 0 ? -0.18 : 0.18;
+    }
+
+    const magnitude = Math.hypot(dirX, dirY) || 1;
+    const speed = randomBetween(config.minSpeed, config.maxSpeed);
+
+    return {
+      vx: (dirX / magnitude) * speed,
+      vy: (dirY / magnitude) * speed
+    };
+  }
+
+  const wrapRect = photoWrap.getBoundingClientRect();
+  if (wrapRect.width <= 0 || wrapRect.height <= 0) {
+    return;
+  }
+
+  function createState(badge) {
+    const config = getMotionConfig(badge);
+    const badgeRect = badge.getBoundingClientRect();
+    const badgeWidth = badgeRect.width || 88;
+    const badgeHeight = badgeRect.height || 36;
+    const insetX = Math.min(14, Math.max(6, wrapRect.width * 0.03));
+    const insetY = Math.min(14, Math.max(6, wrapRect.height * 0.03));
+    const minX = insetX;
+    const minY = insetY;
+    const maxX = Math.max(minX, wrapRect.width - badgeWidth - insetX);
+    const maxY = Math.max(minY, wrapRect.height - badgeHeight - insetY);
+    const velocity = createVelocity(config);
+
+    return {
+      badge,
+      config,
+      minX,
+      maxX,
+      minY,
+      maxY,
+      x: minX + (maxX - minX) * config.startX,
+      y: minY + (maxY - minY) * config.startY,
+      vx: velocity.vx,
+      vy: velocity.vy,
+      rotation: randomBetween(-config.rangeRotate * 0.45, config.rangeRotate * 0.45),
+      vr: randomBetween(-config.maxRotateSpeed, config.maxRotateSpeed),
+      scale: 1
+    };
+  }
+
+  const states = badges.map(createState);
+  let lastTime = window.performance.now();
+
+  function animate(now) {
+    const delta = Math.min(40, now - lastTime) / 1000;
+    lastTime = now;
+
+    states.forEach((state) => {
+      const { badge, config } = state;
+      let hitX = 0;
+      let hitY = 0;
+
+      state.x += state.vx * delta;
+      state.y += state.vy * delta;
+      state.rotation += state.vr * delta;
+
+      if (state.x <= state.minX) {
+        state.x = state.minX;
+        hitX = -1;
+      } else if (state.x >= state.maxX) {
+        state.x = state.maxX;
+        hitX = 1;
+      }
+
+      if (state.y <= state.minY) {
+        state.y = state.minY;
+        hitY = -1;
+      } else if (state.y >= state.maxY) {
+        state.y = state.maxY;
+        hitY = 1;
+      }
+
+      const maxTilt = config.rangeRotate;
+      if (state.rotation >= maxTilt || state.rotation <= -maxTilt) {
+        state.rotation = Math.max(-maxTilt, Math.min(maxTilt, state.rotation));
+        state.vr *= -1;
+      }
+
+      if (hitX || hitY) {
+        const nextVelocity = createVelocity(config, hitX, hitY);
+        state.vx = nextVelocity.vx;
+        state.vy = nextVelocity.vy;
+        state.scale = 1.045;
+        state.vr = randomBetween(-config.maxRotateSpeed, config.maxRotateSpeed);
+      }
+
+      state.scale += (1 - state.scale) * Math.min(1, delta * 8);
+
+      badge.style.setProperty("--tech-float-x", `${state.x.toFixed(2)}px`);
+      badge.style.setProperty("--tech-float-y", `${state.y.toFixed(2)}px`);
+      badge.style.setProperty("--tech-float-rotate", `${state.rotation.toFixed(2)}deg`);
+      badge.style.setProperty("--tech-float-scale", state.scale.toFixed(3));
+    });
+
+    setupFloatingTechBadges._frameId = window.requestAnimationFrame(animate);
+  }
+
+  setupFloatingTechBadges._frameId = window.requestAnimationFrame(animate);
+}
+
+setupFloatingTechBadges._frameId = 0;
+
 function applyProjectImageFallbacks() {
   const projectImages = document.querySelectorAll("[data-project-image]");
   let fallbackIndex = 0;
@@ -507,10 +798,15 @@ setupScrambleRevealOnScroll();
 setupHeroParallax();
 setupProjectToggles();
 setupActiveNavSection();
+setupMobileNav();
+setupFloatingTechBadges();
 runHeroTitleAnimation();
 runHeroSecondaryReveal();
 
-window.addEventListener("resize", applyDeviceLayout);
+window.addEventListener("resize", () => {
+  applyDeviceLayout();
+  setupFloatingTechBadges();
+});
 
 if (window.elementSdk && typeof window.elementSdk.init === "function") {
   window.elementSdk.init({
