@@ -600,6 +600,15 @@ function setupFloatingTechBadges() {
       minSpeed: 25,
       maxSpeed: 35,
       maxRotateSpeed: 8
+    },
+    {
+      className: "tech-badge-ai",
+      startX: 0.14,
+      startY: 0.38,
+      rangeRotate: 7,
+      minSpeed: 23,
+      maxSpeed: 32,
+      maxRotateSpeed: 7
     }
   ];
 

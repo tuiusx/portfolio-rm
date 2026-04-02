@@ -671,6 +671,10 @@ a:focus-visible {
   color: #ffd24d;
 }
 
+.tech-badge-ai {
+  color: #ff8fb4;
+}
+
 .profile-photo-wrap {
   position: relative;
   overflow: hidden;
@@ -779,9 +783,16 @@ a:focus-visible {
     background-color 220ms ease;
 }
 
+.project-card {
+  --project-block-gap: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--project-block-gap);
+}
+
 .project-media {
   overflow: hidden;
-  margin: -1.5rem -1.5rem 1.2rem;
+  margin: -1.5rem -1.5rem 0;
   aspect-ratio: 16 / 9;
   border-bottom: 1px solid var(--border);
   background: linear-gradient(135deg, rgba(0, 173, 181, 0.12), rgba(57, 62, 70, 0.32));
@@ -818,6 +829,13 @@ a:focus-visible {
   font-weight: 700;
 }
 
+.project-card h3,
+.project-card p,
+.project-card .tag-row,
+.project-card .tag-row-secondary {
+  margin: 0;
+}
+
 .project-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -845,7 +863,7 @@ a:focus-visible {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin: 0;
 }
 
 .status-badge {
@@ -914,7 +932,7 @@ body[data-theme="light"] .tag-muted {
 }
 
 .project-links {
-  margin-top: 1.2rem;
+  margin: 0;
 }
 
 .project-links a,
@@ -924,7 +942,7 @@ body[data-theme="light"] .tag-muted {
 }
 
 .project-proof {
-  margin: 0.95rem 0 0;
+  margin: 0;
   padding-left: 0.9rem;
   border-left: 2px solid rgba(0, 173, 181, 0.26);
   color: var(--text-soft);
@@ -937,7 +955,7 @@ body[data-theme="light"] .tag-muted {
 
 .project-toggle {
   display: none;
-  margin-top: -0.1rem;
+  margin: 0;
   padding: 0;
   border: 0;
   background: transparent;
