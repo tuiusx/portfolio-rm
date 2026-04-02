@@ -593,7 +593,7 @@ function setupFloatingTechBadges() {
       maxRotateSpeed: 6
     },
     {
-      className: "tech-badge-api",
+      className: "tech-badge-python",
       startX: 0.76,
       startY: 0.44,
       rangeRotate: 7,
