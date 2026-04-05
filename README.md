@@ -114,6 +114,14 @@ Para GitHub Pages:
 2. mantenha `index.html` na raiz
 3. ative o GitHub Pages nas configuracoes do repositorio
 
+## Licenca
+
+Este projeto e proprietario.
+
+- Copyright (c) 2026 Ricardo Martins
+- All rights reserved
+- Nao e permitida copia, modificacao, redistribuicao ou uso derivado sem autorizacao previa por escrito
+
 ## Proximos passos
 
 - adicionar demos online nos projetos
