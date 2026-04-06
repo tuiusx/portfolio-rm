@@ -1168,7 +1168,8 @@ body[data-device="tablet"] .nav-actions {
 }
 
 body[data-device="tablet"] .nav-toggle {
-  display: none;
+  display: inline-flex;
+  margin-left: 0;
 }
 
 body[data-device="tablet"] .hero-grid,
@@ -1196,6 +1197,7 @@ body[data-device="mobile"] .footer-inner {
   align-items: flex-start;
 }
 
+body[data-device="tablet"] .nav-backdrop,
 body[data-device="mobile"] .nav-backdrop {
   display: block;
   position: fixed;
@@ -1207,6 +1209,7 @@ body[data-device="mobile"] .nav-backdrop {
   transition: opacity 220ms ease;
 }
 
+body[data-device="tablet"] .site-shell.is-menu-open .nav-backdrop,
 body[data-device="mobile"] .site-shell.is-menu-open .nav-backdrop {
   opacity: 1;
   pointer-events: auto;
@@ -1216,15 +1219,18 @@ body.mobile-nav-open {
   overflow: hidden;
 }
 
+body[data-device="tablet"] .nav-actions,
 body[data-device="mobile"] .nav-actions {
   margin-left: auto;
 }
 
+body[data-device="tablet"] .nav-toggle,
 body[data-device="mobile"] .nav-toggle {
   display: inline-flex;
   margin-left: 0;
 }
 
+body[data-device="tablet"] .nav-links,
 body[data-device="mobile"] .nav-links {
   position: absolute;
   top: calc(100% + 0.75rem);
@@ -1252,6 +1258,7 @@ body[data-device="mobile"] .nav-links {
   z-index: 32;
 }
 
+body[data-device="tablet"] .site-shell.is-menu-open .nav-links,
 body[data-device="mobile"] .site-shell.is-menu-open .nav-links {
   opacity: 1;
   visibility: visible;
@@ -1259,6 +1266,7 @@ body[data-device="mobile"] .site-shell.is-menu-open .nav-links {
   transform: translateY(0) scale(1);
 }
 
+body[data-device="tablet"] .nav-link,
 body[data-device="mobile"] .nav-link {
   padding: 0.9rem 1rem;
   border: 1px solid transparent;
@@ -1266,10 +1274,14 @@ body[data-device="mobile"] .nav-link {
   background: rgba(255, 255, 255, 0.02);
 }
 
+body[data-device="tablet"] .nav-link::after,
 body[data-device="mobile"] .nav-link::after {
   display: none;
 }
 
+body[data-device="tablet"] .nav-link:hover,
+body[data-device="tablet"] .nav-link:focus-visible,
+body[data-device="tablet"] .nav-link[aria-current="page"],
 body[data-device="mobile"] .nav-link:hover,
 body[data-device="mobile"] .nav-link:focus-visible,
 body[data-device="mobile"] .nav-link[aria-current="page"] {

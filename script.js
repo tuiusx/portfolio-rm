@@ -86,7 +86,9 @@ function applyDeviceLayout() {
   const deviceType = getDeviceType();
   body.setAttribute("data-device", deviceType);
 
-  if (deviceType !== "mobile") {
+  const shouldUseCollapsedNav = deviceType === "mobile" || deviceType === "tablet";
+
+  if (!shouldUseCollapsedNav) {
     setMobileMenuState(false);
     return;
   }
@@ -109,7 +111,8 @@ function renderIcons() {
 }
 
 function isMobileMenuLayout() {
-  return body.getAttribute("data-device") === "mobile";
+  const deviceType = body.getAttribute("data-device");
+  return deviceType === "mobile" || deviceType === "tablet";
 }
 
 function setMobileMenuState(isOpen) {
