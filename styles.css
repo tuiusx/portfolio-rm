@@ -698,6 +698,10 @@ a:focus-visible {
   transition: opacity 220ms ease;
 }
 
+.project-media::after {
+  transform: none;
+}
+
 .profile-photo-wrap::after {
   content: "";
   position: absolute;
@@ -893,7 +897,10 @@ a:focus-visible {
   transform: scale(1.04);
 }
 
-.project-card:hover .project-media::after,
+.project-card:hover .project-media::after {
+  animation: project-glint-fade 3s ease-out forwards;
+}
+
 .profile-frame:hover .profile-photo-wrap::before,
 .profile-frame:focus-within .profile-photo-wrap::before {
   opacity: 1;
@@ -1578,6 +1585,20 @@ body[data-device="mobile"] .project-toggle {
   .button,
   .contact-actions .button {
     width: 100%;
+  }
+}
+
+@keyframes project-glint-fade {
+  0% {
+    opacity: 0;
+  }
+
+  12% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
 
