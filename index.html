@@ -10,21 +10,27 @@
     />
     <meta name="theme-color" content="#222831" />
     <meta name="author" content="Ricardo Martins" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://tuius.com.br/" />
     <meta property="og:title" content="Ricardo Martins | Desenvolvedor Full Stack" />
     <meta
       property="og:description"
       content="Projetos, stack e formas de contato de Ricardo Martins."
     />
+    <meta property="og:url" content="https://tuius.com.br/" />
+    <meta property="og:site_name" content="Ricardo Martins Portfolio" />
+    <meta property="og:locale" content="pt_BR" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://avatars.githubusercontent.com/u/42036320?v=4" />
+    <meta property="og:image" content="https://tuius.com.br/preview.png" />
     <meta property="og:image:alt" content="Foto de perfil de Ricardo Martins" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@tuiusx" />
     <meta name="twitter:title" content="Ricardo Martins | Desenvolvedor Full Stack" />
     <meta
       name="twitter:description"
       content="Projetos, stack e formas de contato de Ricardo Martins."
     />
-    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/42036320?v=4" />
+    <meta name="twitter:image" content="https://tuius.com.br/preview.png" />
     <link rel="icon" type="image/svg+xml" href="brand-rm.svg" />
     <link rel="shortcut icon" href="brand-rm.svg" />
     <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/42036320?v=4" />
@@ -35,12 +41,27 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260402-1" />
+    <link rel="stylesheet" href="styles.css?v=20260407-1" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ricardo Martins",
+        "url": "https://tuius.com.br/",
+        "jobTitle": "Desenvolvedor Full Stack",
+        "image": "https://tuius.com.br/preview.png",
+        "sameAs": [
+          "https://github.com/tuiusx",
+          "https://www.linkedin.com/in/tuius-martins/"
+        ],
+        "email": "mailto:ricardo.martins@aluno.impacta.edu.br"
+      }
+    </script>
   </head>
   <body data-theme="dark">
     <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
     <div id="app">
-      <nav class="site-shell">
+      <nav class="site-shell" aria-label="Navegação principal">
         <div class="nav-backdrop" data-nav-backdrop aria-hidden="true"></div>
         <div class="container nav-inner">
           <div class="nav-head">
@@ -72,6 +93,7 @@
           <div id="site-navigation" class="nav-links" aria-label="Navegação principal">
             <a href="#home" class="nav-link" aria-current="page">Início</a>
             <a href="#about" class="nav-link">Sobre</a>
+            <a href="#process" class="nav-link">Processo</a>
             <a href="#projects" class="nav-link">Projetos</a>
             <a href="#skills" class="nav-link">Stack</a>
             <a href="#credentials" class="nav-link">Credenciais</a>
@@ -201,6 +223,46 @@
                 <i data-lucide="sparkles"></i>
                 <h3>Como eu construo</h3>
                 <p>Começo pela estrutura, penso no uso real da tela e depois refino visual, interação e consistência.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="process" class="section-block section-alt" aria-labelledby="process-heading">
+          <div class="container">
+            <div class="section-heading reveal-up reveal-on-scroll">
+              <span class="section-kicker">Como eu trabalho</span>
+              <h2 id="process-heading" data-scramble-reveal>Processo simples para entregar com clareza.</h2>
+              <p class="responsive-copy">
+                Organizo cada projeto em etapas curtas para reduzir retrabalho, manter comunicação clara e
+                garantir que o que foi combinado vire entrega de verdade.
+              </p>
+            </div>
+
+            <div class="process-grid">
+              <article class="process-card reveal-up reveal-on-scroll">
+                <span class="process-step">01</span>
+                <i data-lucide="search-check"></i>
+                <h3>Diagnóstico rápido</h3>
+                <p>Mapeio objetivo, contexto e prioridade para não começar pelo lado errado.</p>
+              </article>
+              <article class="process-card reveal-up reveal-on-scroll">
+                <span class="process-step">02</span>
+                <i data-lucide="layout-template"></i>
+                <h3>Estrutura da solução</h3>
+                <p>Defino fluxo de tela, componentes e base técnica antes de acelerar implementação.</p>
+              </article>
+              <article class="process-card reveal-up reveal-on-scroll">
+                <span class="process-step">03</span>
+                <i data-lucide="wrench"></i>
+                <h3>Implementação iterativa</h3>
+                <p>Entrego por blocos curtos com validação contínua para manter qualidade e ritmo.</p>
+              </article>
+              <article class="process-card reveal-up reveal-on-scroll">
+                <span class="process-step">04</span>
+                <i data-lucide="rocket"></i>
+                <h3>Refino e publicação</h3>
+                <p>Reviso UX, acessibilidade e performance antes de publicar a versão final.</p>
               </article>
             </div>
           </div>
@@ -692,6 +754,6 @@
       </footer>
     </div>
 
-    <script src="script.js?v=20260402-1"></script>
+    <script src="script.js?v=20260407-1"></script>
   </body>
 </html>
