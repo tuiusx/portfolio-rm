@@ -12,8 +12,8 @@
   email: "ricardo.martins@aluno.impacta.edu.br",
   project1_title: "ProjetoLMS",
   project1_desc: "Projeto acadêmico em Django voltado à organização de cursos, disciplinas, notícias e acesso de alunos em uma experiência web mais estruturada.",
-  project2_title: "coffee-delivery",
-  project2_desc: "Interface de e-commerce focada em catálogo, experiência de compra e fluxo de entrega, com atenção especial a composição visual e usabilidade.",
+  project2_title: "Rare Hunter TCG BR",
+  project2_desc: "Loja virtual para cartas e produtos TCG, com catálogo, carrinho, checkout, conta do cliente e painel administrativo.",
   project3_title: "be-the-hero",
   project3_desc: "Aplicação full stack que conecta ONGs a pessoas interessadas em ajudar, unindo painel web, API e experiência mobile em um fluxo completo.",
   skill1: "TypeScript",
@@ -29,6 +29,176 @@ const themeState = {
   light: { icon: "moon" }
 };
 
+const languageState = {
+  pt: { label: "EN", ariaLabel: "Switch to English" },
+  en: { label: "PT", ariaLabel: "Trocar para português" }
+};
+
+const englishContent = {
+  '.nav-link[href="#home"]': "Home",
+  '.nav-link[href="#about"]': "About",
+  '.nav-link[href="#process"]': "Process",
+  '.nav-link[href="#projects"]': "Projects",
+  '.nav-link[href="#skills"]': "Stack",
+  '.nav-link[href="#credentials"]': "Credentials",
+  '.nav-link[href="#contact"]': "Contact",
+  ".eyebrow": "Full stack developer",
+  "#hero-title": "React, Node.js and interfaces designed for real products.",
+  "#hero-bio": "I build clear, functional web experiences ready to grow, combining strong front-end work, organized APIs and attention to real screen usage.",
+  ".hero-availability": "Available for projects, collaborations and remote opportunities.",
+  "#hero-actions .button-primary": "View projects",
+  "#about .section-kicker": "About me",
+  "#about-heading": "Clarity to build, judgment to evolve.",
+  "#about .section-heading p": "My focus is building products with solid visual structure, simple navigation and an organized technical base. I like combining thoughtful interfaces with logic that can scale.",
+  ".about-card:nth-child(1) h3": "Current focus",
+  ".about-card:nth-child(1) p": "Complete web projects with strong front-end work, API integration and a more professional experience.",
+  ".about-card:nth-child(2) h3": "What I seek",
+  ".about-card:nth-child(2) p": "Freelance work, roles and collaborations where I can deliver real value and keep evolving quickly.",
+  ".about-card:nth-child(3) h3": "How I build",
+  ".about-card:nth-child(3) p": "I start with structure, think through real screen usage and then refine visuals, interaction and consistency.",
+  "#process .section-kicker": "How I work",
+  "#process-heading": "A simple process to deliver with clarity.",
+  "#process .section-heading p": "I organize every project into short steps to reduce rework, keep communication clear and turn what was agreed into real delivery.",
+  ".process-card:nth-child(1) h3": "Quick diagnosis",
+  ".process-card:nth-child(1) p": "I map goals, context and priorities before starting from the wrong place.",
+  ".process-card:nth-child(2) h3": "Solution structure",
+  ".process-card:nth-child(2) p": "I define screen flow, components and technical base before speeding up implementation.",
+  ".process-card:nth-child(3) h3": "Iterative implementation",
+  ".process-card:nth-child(3) p": "I deliver in short blocks with continuous validation to keep quality and rhythm.",
+  ".process-card:nth-child(4) h3": "Refinement and launch",
+  ".process-card:nth-child(4) p": "I review UX, accessibility and performance before publishing the final version.",
+  "#projects .section-kicker": "Featured projects",
+  "#projects-heading": "Projects with real delivery.",
+  "#projects .section-heading p": "I gathered projects from my GitHub to show how I think, build and deliver clearer solutions.",
+  ".featured-project .section-kicker": "Featured project",
+  "#featured-project-title": "Rare Hunter TCG BR",
+  ".featured-project-copy > p": "E-commerce for TCG cards and products with catalog, cart, checkout, customer area, admin dashboard and a foundation ready for real operation.",
+  ".featured-impact span:nth-child(1)": "<strong>Problem:</strong> organize TCG product sales with a reliable flow.",
+  ".featured-impact span:nth-child(2)": "<strong>Solution:</strong> a Next.js store with purchase journey and administration.",
+  ".featured-impact span:nth-child(3)": "<strong>Result:</strong> a stronger project to demonstrate product thinking, UI and architecture.",
+  ".featured-links a:nth-of-type(1)": "Open site",
+  ".featured-links a:nth-of-type(2)": "View repository",
+  ".featured-links a:nth-of-type(3)": "Download brief",
+  ".project-detail-link": "Project details",
+  "#project1-desc": "Academic Django project focused on organizing courses, subjects, news and student access in a more structured web experience.",
+  "#project2-desc": "Online store for TCG cards and products, with catalog, cart, checkout, customer account and admin dashboard.",
+  "#project3-desc": "Full stack application connecting NGOs with people interested in helping, combining web panel, API and mobile experience.",
+  ".project-card:nth-child(1) .status-badge": "Academic project",
+  ".project-card:nth-child(1) .project-proof": "<strong>Shows:</strong> academic content organization, Django structure and flow-oriented navigation.",
+  ".project-card:nth-child(1) .project-impact span:nth-child(1)": "<strong>Problem:</strong> centralize courses, news and student access.",
+  ".project-card:nth-child(1) .project-impact span:nth-child(2)": "<strong>Solution:</strong> Django web structure with content-oriented navigation.",
+  ".project-card:nth-child(1) .project-impact span:nth-child(3)": "<strong>Result:</strong> organized academic base that is easier to evolve.",
+  ".project-card:nth-child(1) .project-links a": "View repository",
+  ".project-card:nth-child(2) .status-badge": "E-commerce",
+  ".project-card:nth-child(2) .project-proof": "<strong>Shows:</strong> complete product building with front-end, authentication, operation and purchase flow.",
+  ".project-card:nth-child(2) .project-impact span:nth-child(1)": "<strong>Problem:</strong> sell TCG products with a clear catalog and reliable journey.",
+  ".project-card:nth-child(2) .project-impact span:nth-child(2)": "<strong>Solution:</strong> Next.js, Supabase, cart, checkout and admin area.",
+  ".project-card:nth-child(2) .project-impact span:nth-child(3)": "<strong>Result:</strong> the strongest portfolio project to demonstrate a real product.",
+  ".project-card:nth-child(2) .project-links a:nth-of-type(1)": "Open site",
+  ".project-card:nth-child(2) .project-links a:nth-of-type(2)": "View repository",
+  ".project-card:nth-child(2) .project-links a:nth-of-type(3)": "Download brief",
+  ".project-card:nth-child(3) .status-badge": "Full stack",
+  ".project-card:nth-child(3) .project-proof": "<strong>Shows:</strong> web, REST API and mobile integration in a solution with social purpose.",
+  ".project-card:nth-child(3) .project-impact span:nth-child(1)": "<strong>Problem:</strong> connect NGOs with people interested in helping.",
+  ".project-card:nth-child(3) .project-impact span:nth-child(2)": "<strong>Solution:</strong> REST API with connected web and mobile interfaces.",
+  ".project-card:nth-child(3) .project-impact span:nth-child(3)": "<strong>Result:</strong> full stack integration example with social purpose.",
+  ".project-card:nth-child(3) .project-links a": "View repository",
+  "#skills .section-kicker": "Stack and process",
+  "#skills-heading": "Stack that supports my work.",
+  "#contact .section-kicker": "Contact",
+  "#contact-heading": "Want to build something with me?",
+  "#contact-copy": "Tell me the goal, timeline and context. I will answer clearly how I can help, whether it is freelance work, collaboration or a remote opportunity.",
+  "#project-modal-kicker": "Project details",
+  ".project-modal-grid > div:nth-child(1) strong": "Problem",
+  ".project-modal-grid > div:nth-child(2) strong": "Solution",
+  ".project-modal-grid > div:nth-child(3) strong": "Stack",
+  ".project-modal-grid > div:nth-child(4) strong": "Result",
+  '.contact-form label:nth-child(1) span': "Your name",
+  '.contact-form label:nth-child(2) span': "Your e-mail",
+  '.contact-form label:nth-child(3) span': "Message",
+  ".contact-submit": '<i data-lucide="send"></i> Prepare e-mail',
+  "#email-text": "Send e-mail",
+  "#footer-text": "© 2026 Ricardo Martins. Portfolio built to show projects, process and identity."
+};
+
+const englishAttributes = {
+  '.contact-form input[name="name"]': { placeholder: "What should I call you?" },
+  '.contact-form input[name="email"]': { placeholder: "you@email.com" },
+  ".contact-form textarea": { placeholder: "Tell me briefly about the project or opportunity." },
+  ".project-modal-close": { "aria-label": "Close project details" }
+};
+
+const projectDetails = {
+  projetolms: {
+    pt: {
+      title: "ProjetoLMS",
+      summary: "Projeto acadêmico em Django para organizar cursos, disciplinas, notícias e acesso de alunos.",
+      problem: "Conteúdos acadêmicos costumam ficar espalhados, dificultando navegação e manutenção.",
+      solution: "Criei uma estrutura web com Django, separando informação, navegação e fluxo de acesso.",
+      stack: "Python, Django, SQL, HTML, CSS e organização de rotas.",
+      result: "Uma base clara para gestão acadêmica, com foco em estrutura e evolução do sistema.",
+      links: [{ label: "Ver repositório", href: "https://github.com/tuiusx/ProjetoLMS" }]
+    },
+    en: {
+      title: "ProjetoLMS",
+      summary: "Academic Django project to organize courses, subjects, news and student access.",
+      problem: "Academic content is often scattered, making navigation and maintenance harder.",
+      solution: "I built a Django web structure separating information, navigation and access flow.",
+      stack: "Python, Django, SQL, HTML, CSS and route organization.",
+      result: "A clear base for academic management, focused on structure and future evolution.",
+      links: [{ label: "View repository", href: "https://github.com/tuiusx/ProjetoLMS" }]
+    }
+  },
+  "rare-hunter": {
+    pt: {
+      title: "Rare Hunter TCG BR",
+      summary: "E-commerce para cartas e produtos TCG com catálogo, carrinho, checkout, conta do cliente e painel administrativo.",
+      problem: "A loja precisava apresentar produtos de nicho com clareza e sustentar uma jornada de compra confiável.",
+      solution: "Desenvolvi uma aplicação em Next.js com catálogo, fluxo de compra, autenticação, administração e base para integrações reais.",
+      stack: "Next.js, React, TypeScript, Supabase, Vitest, Playwright e arquitetura de e-commerce.",
+      result: "Projeto mais completo do portfólio para demonstrar produto real, UI, operação e decisões técnicas.",
+      links: [
+        { label: "Acessar site", href: "https://rarehuntertcgbr.com.br" },
+        { label: "Ver repositório", href: "https://github.com/tuiusx/rarehuntertcgbr" },
+        { label: "Baixar apresentação", href: "assets/downloads/rare-hunter-projeto.pdf", download: true }
+      ]
+    },
+    en: {
+      title: "Rare Hunter TCG BR",
+      summary: "E-commerce for TCG cards and products with catalog, cart, checkout, customer account and admin dashboard.",
+      problem: "The store needed to present niche products clearly and support a reliable purchase journey.",
+      solution: "I developed a Next.js application with catalog, purchase flow, authentication, administration and a foundation for real integrations.",
+      stack: "Next.js, React, TypeScript, Supabase, Vitest, Playwright and e-commerce architecture.",
+      result: "The strongest portfolio project to demonstrate a real product, UI, operation and technical decisions.",
+      links: [
+        { label: "Open site", href: "https://rarehuntertcgbr.com.br" },
+        { label: "View repository", href: "https://github.com/tuiusx/rarehuntertcgbr" },
+        { label: "Download brief", href: "assets/downloads/rare-hunter-projeto.pdf", download: true }
+      ]
+    }
+  },
+  "be-the-hero": {
+    pt: {
+      title: "be-the-hero",
+      summary: "Aplicação full stack que conecta ONGs a pessoas interessadas em ajudar.",
+      problem: "ONGs precisam divulgar casos de forma simples para alcançar pessoas dispostas a contribuir.",
+      solution: "Estruturei API REST, painel web e experiência mobile conectados em um fluxo único.",
+      stack: "Node.js, Express, React, React Native, SQLite e API REST.",
+      result: "Exemplo claro de integração full stack com proposta social e múltiplas interfaces.",
+      links: [{ label: "Ver repositório", href: "https://github.com/tuiusx/be-the-hero" }]
+    },
+    en: {
+      title: "be-the-hero",
+      summary: "Full stack application connecting NGOs with people interested in helping.",
+      problem: "NGOs need a simple way to publish cases and reach people willing to contribute.",
+      solution: "I structured a REST API, web panel and mobile experience connected in one flow.",
+      stack: "Node.js, Express, React, React Native, SQLite and REST API.",
+      result: "A clear example of full stack integration with social purpose and multiple interfaces.",
+      links: [{ label: "View repository", href: "https://github.com/tuiusx/be-the-hero" }]
+    }
+  }
+};
+
 const root = document.documentElement;
 const body = document.body;
 const siteShell = document.querySelector(".site-shell");
@@ -38,6 +208,7 @@ const navToggle = document.getElementById("nav-toggle");
 const navToggleIcon = document.getElementById("nav-toggle-icon");
 const themeToggle = document.getElementById("theme-toggle");
 const themeIcon = document.getElementById("theme-icon");
+const languageToggle = document.getElementById("language-toggle");
 const fallbackProjectImages = [
   "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
   "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
@@ -98,6 +269,10 @@ function applyDeviceLayout() {
 
 function getSavedTheme() {
   return localStorage.getItem("portfolio-theme") || "dark";
+}
+
+function getSavedLanguage() {
+  return localStorage.getItem("portfolio-language") || "pt";
 }
 
 function renderIcons() {
@@ -240,6 +415,63 @@ function applyTheme(theme) {
     nextTheme === "dark" ? "Ativar tema claro" : "Ativar tema escuro"
   );
   localStorage.setItem("portfolio-theme", nextTheme);
+  renderIcons();
+}
+
+function updateToggleLabels() {
+  const language = body.getAttribute("data-language") || "pt";
+  const isEnglish = language === "en";
+
+  document.querySelectorAll("[data-project-toggle], [data-credential-toggle]").forEach((button) => {
+    const card = button.closest(".project-card, .credential-card");
+    const isExpanded = card?.classList.contains("is-expanded") || false;
+    const labels = isEnglish
+      ? { closed: "See more", open: "Show less" }
+      : { closed: "Ver mais", open: "Ver menos" };
+
+    button.textContent = isExpanded ? labels.open : labels.closed;
+  });
+}
+
+function applyLanguage(language) {
+  const nextLanguage = languageState[language] ? language : "pt";
+  const isEnglish = nextLanguage === "en";
+
+  document.documentElement.lang = isEnglish ? "en" : "pt-BR";
+  body.setAttribute("data-language", nextLanguage);
+
+  Object.entries(englishContent).forEach(([selector, englishValue]) => {
+    document.querySelectorAll(selector).forEach((element) => {
+      if (!element.dataset.langPtHtml) {
+        element.dataset.langPtHtml = element.innerHTML;
+      }
+
+      element.innerHTML = isEnglish ? englishValue : element.dataset.langPtHtml;
+    });
+  });
+
+  Object.entries(englishAttributes).forEach(([selector, attributes]) => {
+    document.querySelectorAll(selector).forEach((element) => {
+      Object.entries(attributes).forEach(([attribute, englishValue]) => {
+        const normalizedAttribute = attribute.replace(/-([a-z])/g, (_, char) => char.toUpperCase());
+        const storageKey = `langPt${normalizedAttribute.charAt(0).toUpperCase()}${normalizedAttribute.slice(1)}`;
+        if (!element.dataset[storageKey]) {
+          element.dataset[storageKey] = element.getAttribute(attribute) || "";
+        }
+
+        element.setAttribute(attribute, isEnglish ? englishValue : element.dataset[storageKey]);
+      });
+    });
+  });
+
+  if (languageToggle) {
+    languageToggle.textContent = languageState[nextLanguage].label;
+    languageToggle.setAttribute("aria-label", languageState[nextLanguage].ariaLabel);
+    languageToggle.setAttribute("aria-pressed", String(isEnglish));
+  }
+
+  localStorage.setItem("portfolio-language", nextLanguage);
+  updateToggleLabels();
   renderIcons();
 }
 
@@ -404,7 +636,7 @@ function setupProjectToggles() {
 
       const isExpanded = projectCard.classList.toggle("is-expanded");
       button.setAttribute("aria-expanded", String(isExpanded));
-      button.textContent = isExpanded ? "Ver menos" : "Ver mais";
+      updateToggleLabels();
     });
   });
 
@@ -417,8 +649,80 @@ function setupProjectToggles() {
 
       const isExpanded = credentialCard.classList.toggle("is-expanded");
       button.setAttribute("aria-expanded", String(isExpanded));
-      button.textContent = isExpanded ? "Ver menos" : "Ver mais";
+      updateToggleLabels();
     });
+  });
+}
+
+function setupProjectDetails() {
+  const modal = document.querySelector("[data-project-modal]");
+  if (!modal) {
+    return;
+  }
+
+  const title = document.getElementById("project-modal-title");
+  const summary = document.getElementById("project-modal-summary");
+  const problem = document.getElementById("project-modal-problem");
+  const solution = document.getElementById("project-modal-solution");
+  const stack = document.getElementById("project-modal-stack");
+  const result = document.getElementById("project-modal-result");
+  const links = document.getElementById("project-modal-links");
+  const closeButton = modal.querySelector(".project-modal-close");
+
+  function closeModal() {
+    modal.hidden = true;
+    body.classList.remove("modal-open");
+  }
+
+  function openModal(projectKey) {
+    const language = body.getAttribute("data-language") === "en" ? "en" : "pt";
+    const detail = projectDetails[projectKey]?.[language];
+    if (!detail || !title || !summary || !problem || !solution || !stack || !result || !links) {
+      return;
+    }
+
+    title.textContent = detail.title;
+    summary.textContent = detail.summary;
+    problem.textContent = detail.problem;
+    solution.textContent = detail.solution;
+    stack.textContent = detail.stack;
+    result.textContent = detail.result;
+    links.innerHTML = "";
+
+    detail.links.forEach((link) => {
+      const anchor = document.createElement("a");
+      anchor.href = link.href;
+      anchor.textContent = link.label;
+
+      if (link.download) {
+        anchor.setAttribute("download", "");
+      } else {
+        anchor.target = "_blank";
+        anchor.rel = "noreferrer";
+      }
+
+      links.appendChild(anchor);
+    });
+
+    modal.hidden = false;
+    body.classList.add("modal-open");
+    closeButton?.focus();
+  }
+
+  document.querySelectorAll("[data-project-detail]").forEach((button) => {
+    button.addEventListener("click", () => {
+      openModal(button.getAttribute("data-project-detail"));
+    });
+  });
+
+  modal.querySelectorAll("[data-project-modal-close]").forEach((button) => {
+    button.addEventListener("click", closeModal);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !modal.hidden) {
+      closeModal();
+    }
   });
 }
 
@@ -519,6 +823,130 @@ function setupMobileNav() {
       setMobileMenuState(false);
     }
   });
+}
+
+function setupContactForm() {
+  const contactForm = document.querySelector("[data-contact-form]");
+  if (!contactForm) {
+    return;
+  }
+
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const name = String(formData.get("name") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+    const message = String(formData.get("message") || "").trim();
+
+    const subject = encodeURIComponent(`Contato pelo portfólio - ${name || "novo projeto"}`);
+    const body = encodeURIComponent(
+      [
+        `Nome: ${name}`,
+        `E-mail: ${email}`,
+        "",
+        "Mensagem:",
+        message
+      ].join("\n")
+    );
+
+    window.location.href = `mailto:${defaultConfig.email}?subject=${subject}&body=${body}`;
+  });
+}
+
+function setupSimpleAnalytics() {
+  const storageKey = "portfolio-analytics-events";
+  const trackedSelector = [
+    ".button",
+    ".project-links a",
+    ".project-detail-link",
+    ".contact-submit",
+    '.nav-link[href="#contact"]'
+  ].join(", ");
+
+  function readEvents() {
+    try {
+      return JSON.parse(localStorage.getItem(storageKey) || "[]");
+    } catch {
+      return [];
+    }
+  }
+
+  function writeEvents(events) {
+    localStorage.setItem(storageKey, JSON.stringify(events.slice(-120)));
+  }
+
+  function getEventName(target) {
+    if (target.classList.contains("project-detail-link")) {
+      return `project_detail:${target.getAttribute("data-project-detail") || "unknown"}`;
+    }
+
+    if (target.classList.contains("contact-submit")) {
+      return "contact_form:prepare_email";
+    }
+
+    if (target instanceof HTMLAnchorElement) {
+      const href = target.getAttribute("href") || "";
+      if (href.includes("rare-hunter-projeto.pdf")) {
+        return "download:rare_hunter_brief";
+      }
+      if (href.includes("rarehuntertcgbr.com.br")) {
+        return "project_site:rare_hunter";
+      }
+      if (href.includes("github.com")) {
+        return "outbound:github";
+      }
+      if (href.includes("linkedin.com")) {
+        return "outbound:linkedin";
+      }
+      if (href === "#contact") {
+        return "navigation:contact";
+      }
+      if (href.startsWith("#")) {
+        return `navigation:${href.slice(1)}`;
+      }
+    }
+
+    return "interaction:click";
+  }
+
+  function recordEvent(target) {
+    const event = {
+      name: getEventName(target),
+      label: target.textContent.trim().replace(/\s+/g, " ").slice(0, 80),
+      href: target instanceof HTMLAnchorElement ? target.href : "",
+      path: window.location.pathname,
+      language: body.getAttribute("data-language") || "pt",
+      theme: body.getAttribute("data-theme") || "dark",
+      createdAt: new Date().toISOString()
+    };
+
+    const events = readEvents();
+    events.push(event);
+    writeEvents(events);
+
+    const endpoint = window.PORTFOLIO_ANALYTICS_ENDPOINT;
+    if (endpoint && navigator.sendBeacon) {
+      navigator.sendBeacon(endpoint, JSON.stringify(event));
+    }
+  }
+
+  document.addEventListener("click", (event) => {
+    const target = event.target.closest(trackedSelector);
+    if (target) {
+      recordEvent(target);
+    }
+  });
+
+  window.portfolioAnalytics = {
+    getEvents: readEvents,
+    clear: () => localStorage.removeItem(storageKey),
+    getSummary: () =>
+      readEvents().reduce((summary, event) => {
+        summary[event.name] = (summary[event.name] || 0) + 1;
+        return summary;
+      }, {})
+  };
 }
 
 function setupFloatingTechBadges() {
@@ -784,6 +1212,13 @@ themeToggle.addEventListener("click", () => {
   applyTheme(currentTheme === "dark" ? "light" : "dark");
 });
 
+if (languageToggle) {
+  languageToggle.addEventListener("click", () => {
+    const currentLanguage = body.getAttribute("data-language") || "pt";
+    applyLanguage(currentLanguage === "pt" ? "en" : "pt");
+  });
+}
+
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (event) => {
     const href = link.getAttribute("href");
@@ -803,14 +1238,18 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 
 applyTheme(getSavedTheme());
 applyConfig(defaultConfig);
+applyLanguage(getSavedLanguage());
 applyDeviceLayout();
 applyProjectImageFallbacks();
 setupScrollReveal();
 setupScrambleRevealOnScroll();
 setupHeroParallax();
 setupProjectToggles();
+setupProjectDetails();
 setupActiveNavSection();
 setupMobileNav();
+setupContactForm();
+setupSimpleAnalytics();
 setupFloatingTechBadges();
 runHeroTitleAnimation();
 runHeroSecondaryReveal();
@@ -825,6 +1264,7 @@ if (window.elementSdk && typeof window.elementSdk.init === "function") {
     defaultConfig,
     onConfigChange: async (config) => {
       applyConfig(config);
+      applyLanguage(getSavedLanguage());
       runHeroTitleAnimation();
       runHeroSecondaryReveal();
       renderIcons();

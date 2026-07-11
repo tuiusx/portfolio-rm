@@ -41,7 +41,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260407-1" />
+    <link rel="stylesheet" href="styles.css?v=20260710-1" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -77,6 +77,15 @@
                 aria-pressed="false"
               >
                 <i id="theme-icon" data-lucide="sun"></i>
+              </button>
+              <button
+                id="language-toggle"
+                class="language-toggle"
+                type="button"
+                aria-label="Switch to English"
+                aria-pressed="false"
+              >
+                EN
               </button>
               <button
                 id="nav-toggle"
@@ -278,6 +287,50 @@
               </p>
             </div>
 
+            <article class="featured-project reveal-up reveal-on-scroll" aria-labelledby="featured-project-title">
+              <div class="featured-project-media">
+                <img
+                  src="assets/projects/rare-hunter-banner.jpg"
+                  alt="Banner do projeto Rare Hunter TCG BR"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="featured-project-copy">
+                <span class="section-kicker">Projeto em destaque</span>
+                <h3 id="featured-project-title">Rare Hunter TCG BR</h3>
+                <p>
+                  E-commerce para cartas e produtos TCG com catálogo, carrinho, checkout, área do cliente,
+                  painel administrativo e base pronta para operação real.
+                </p>
+                <div class="impact-list featured-impact" aria-label="Resumo do impacto do projeto Rare Hunter">
+                  <span><strong>Problema:</strong> organizar venda de produtos TCG com fluxo confiável.</span>
+                  <span><strong>Solução:</strong> loja em Next.js com jornada de compra e administração.</span>
+                  <span><strong>Resultado:</strong> projeto mais completo para demonstrar produto, UI e arquitetura.</span>
+                </div>
+                <div class="tag-row">
+                  <span class="tag">Next.js</span>
+                  <span class="tag tag-muted">TypeScript</span>
+                  <span class="tag tag-muted">Supabase</span>
+                  <span class="tag tag-muted">Checkout</span>
+                </div>
+                <div class="project-links featured-links">
+                  <button class="project-detail-link" type="button" data-project-detail="rare-hunter">
+                    Ver detalhes
+                  </button>
+                  <a href="https://rarehuntertcgbr.com.br" target="_blank" rel="noreferrer">
+                    Acessar site
+                  </a>
+                  <a href="https://github.com/tuiusx/rarehuntertcgbr" target="_blank" rel="noreferrer">
+                    Ver repositório
+                  </a>
+                  <a href="assets/downloads/rare-hunter-projeto.pdf" download>
+                    Baixar apresentação
+                  </a>
+                </div>
+              </div>
+            </article>
+
             <div class="project-grid">
               <article class="project-card reveal-up reveal-on-scroll">
                 <div class="project-media">
@@ -303,6 +356,11 @@
                 <p class="project-proof">
                   <strong>Mostra:</strong> organização de conteúdo acadêmico, estrutura em Django e navegação orientada a fluxo.
                 </p>
+                <div class="project-impact" aria-label="Impacto do projeto ProjetoLMS">
+                  <span><strong>Problema:</strong> centralizar cursos, notícias e acesso de alunos.</span>
+                  <span><strong>Solução:</strong> estrutura web em Django com navegação orientada a conteúdo.</span>
+                  <span><strong>Resultado:</strong> base acadêmica organizada e fácil de evoluir.</span>
+                </div>
                 <button class="project-toggle" type="button" data-project-toggle aria-expanded="false">
                   Ver mais
                 </button>
@@ -312,6 +370,9 @@
                   <span class="tag tag-muted">SQL</span>
                 </div>
                 <div class="project-links">
+                  <button class="project-detail-link" type="button" data-project-detail="projetolms">
+                    Ver detalhes
+                  </button>
                   <a
                     href="https://github.com/tuiusx/ProjetoLMS"
                     target="_blank"
@@ -328,41 +389,69 @@
                   <img
                     data-project-image
                     data-has-readme-image="true"
-                    src="https://raw.githubusercontent.com/tuiusx/coffee-delivery/main/.github/background.png"
-                    alt="Preview do projeto coffee-delivery"
+                    src="assets/projects/rare-hunter-banner.jpg"
+                    alt="Preview do projeto Rare Hunter TCG BR"
                     loading="lazy"
                     decoding="async"
                   />
                 </div>
                 <div class="project-top">
-                  <span class="status-badge">Front-end</span>
+                  <span class="status-badge">E-commerce</span>
                   <div class="project-icon">
-                    <i data-lucide="coffee"></i>
+                    <i data-lucide="shopping-bag"></i>
                   </div>
                 </div>
-                <h3 id="project2-title">coffee-delivery</h3>
+                <h3 id="project2-title">Rare Hunter TCG BR</h3>
                 <p id="project2-desc" class="project-summary">
-                  Interface de e-commerce focada em catálogo, experiência de compra e fluxo de entrega, com atenção especial a composição visual e usabilidade.
+                  Loja virtual para cartas e produtos TCG, com catálogo, carrinho, checkout, conta do cliente e painel administrativo.
                 </p>
                 <p class="project-proof">
-                  <strong>Mostra:</strong> cuidado com UI, consistência visual e construção de jornada de compra.
+                  <strong>Mostra:</strong> construção de produto completo com front-end, autenticação, operação e fluxo de compra.
                 </p>
+                <div class="project-impact" aria-label="Impacto do projeto Rare Hunter TCG BR">
+                  <span><strong>Problema:</strong> vender produtos TCG com catálogo claro e jornada confiável.</span>
+                  <span><strong>Solução:</strong> Next.js, Supabase, carrinho, checkout e área administrativa.</span>
+                  <span><strong>Resultado:</strong> projeto mais robusto do portfólio para demonstrar produto real.</span>
+                </div>
                 <button class="project-toggle" type="button" data-project-toggle aria-expanded="false">
                   Ver mais
                 </button>
                 <div class="tag-row">
-                  <span class="tag">React</span>
+                  <span class="tag">Next.js</span>
                   <span class="tag tag-muted">TypeScript</span>
-                  <span class="tag tag-muted">UI</span>
+                  <span class="tag tag-muted">Supabase</span>
+                </div>
+                <div class="tag-row tag-row-secondary">
+                  <span class="tag tag-muted">E-commerce</span>
+                  <span class="tag tag-muted">Admin</span>
+                  <span class="tag tag-muted">Checkout</span>
                 </div>
                 <div class="project-links">
+                  <button class="project-detail-link" type="button" data-project-detail="rare-hunter">
+                    Ver detalhes
+                  </button>
                   <a
-                    href="https://github.com/tuiusx/coffee-delivery"
+                    href="https://rarehuntertcgbr.com.br"
                     target="_blank"
                     rel="noreferrer"
-                    aria-label="Abrir repositório do projeto coffee-delivery no GitHub"
+                    aria-label="Abrir site do projeto Rare Hunter TCG BR"
+                  >
+                    Acessar site
+                  </a>
+                  <a
+                    href="https://github.com/tuiusx/rarehuntertcgbr"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Abrir repositório do projeto Rare Hunter TCG BR no GitHub"
                   >
                     Ver repositório
+                  </a>
+                  <a
+                    href="assets/downloads/rare-hunter-projeto.pdf"
+                    download
+                    aria-label="Baixar apresentação do projeto Rare Hunter TCG BR"
+                  >
+                    Baixar apresentação
                   </a>
                 </div>
               </article>
@@ -381,7 +470,7 @@
                 <div class="project-top">
                   <span class="status-badge">Full stack</span>
                   <div class="project-icon">
-                    <i data-lucide="shield-plus"></i>
+                    <i data-lucide="shield"></i>
                   </div>
                 </div>
                 <h3 id="project3-title">be-the-hero</h3>
@@ -391,6 +480,11 @@
                 <p class="project-proof">
                   <strong>Mostra:</strong> integração entre web, API REST e mobile em uma solução com proposta social.
                 </p>
+                <div class="project-impact" aria-label="Impacto do projeto be-the-hero">
+                  <span><strong>Problema:</strong> aproximar ONGs de pessoas interessadas em ajudar.</span>
+                  <span><strong>Solução:</strong> API REST com interfaces web e mobile conectadas.</span>
+                  <span><strong>Resultado:</strong> exemplo de integração full stack com proposta social.</span>
+                </div>
                 <button class="project-toggle" type="button" data-project-toggle aria-expanded="false">
                   Ver mais
                 </button>
@@ -405,6 +499,9 @@
                   <span class="tag tag-muted">API REST</span>
                 </div>
                 <div class="project-links">
+                  <button class="project-detail-link" type="button" data-project-detail="be-the-hero">
+                    Ver detalhes
+                  </button>
                   <a
                     href="https://github.com/tuiusx/be-the-hero"
                     target="_blank"
@@ -418,6 +515,37 @@
             </div>
           </div>
         </section>
+
+        <div class="project-modal" data-project-modal hidden>
+          <div class="project-modal-backdrop" data-project-modal-close></div>
+          <article class="project-modal-panel" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+            <button class="project-modal-close" type="button" data-project-modal-close aria-label="Fechar detalhes do projeto">
+              <i data-lucide="x"></i>
+            </button>
+            <span class="section-kicker" id="project-modal-kicker">Detalhes do projeto</span>
+            <h2 id="project-modal-title"></h2>
+            <p id="project-modal-summary"></p>
+            <div class="project-modal-grid">
+              <div>
+                <strong>Problema</strong>
+                <p id="project-modal-problem"></p>
+              </div>
+              <div>
+                <strong>Solução</strong>
+                <p id="project-modal-solution"></p>
+              </div>
+              <div>
+                <strong>Stack</strong>
+                <p id="project-modal-stack"></p>
+              </div>
+              <div>
+                <strong>Resultado</strong>
+                <p id="project-modal-result"></p>
+              </div>
+            </div>
+            <div class="project-links" id="project-modal-links"></div>
+          </article>
+        </div>
 
         <section id="skills" class="section-block" aria-labelledby="skills-heading">
           <div class="container">
@@ -701,11 +829,29 @@
         <section id="contact" class="section-block" aria-labelledby="contact-heading">
           <div class="container contact-card reveal-up reveal-on-scroll">
             <span class="section-kicker">Contato</span>
-            <h2 id="contact-heading">Se curtiu meu perfil, vamos conversar.</h2>
-            <p>
-              Estou aberto a freelas, colaborações e oportunidades. Se fizer sentido para o seu projeto,
-              me chama no LinkedIn, no GitHub ou por e-mail.
+            <h2 id="contact-heading">Quer construir algo comigo?</h2>
+            <p id="contact-copy">
+              Me conte o objetivo, prazo e contexto. Eu respondo com clareza sobre como posso ajudar,
+              seja em um freela, colaboração ou oportunidade remota.
             </p>
+            <form class="contact-form" data-contact-form>
+              <label>
+                <span>Seu nome</span>
+                <input type="text" name="name" autocomplete="name" placeholder="Como posso te chamar?" required />
+              </label>
+              <label>
+                <span>Seu e-mail</span>
+                <input type="email" name="email" autocomplete="email" placeholder="voce@email.com" required />
+              </label>
+              <label class="contact-form-full">
+                <span>Mensagem</span>
+                <textarea name="message" rows="4" placeholder="Me conte rapidamente sobre o projeto ou oportunidade." required></textarea>
+              </label>
+              <button class="button button-primary contact-submit" type="submit">
+                <i data-lucide="send"></i>
+                Preparar e-mail
+              </button>
+            </form>
             <div class="contact-actions">
               <a
                 id="email-link"
@@ -754,6 +900,6 @@
       </footer>
     </div>
 
-    <script src="script.js?v=20260407-1"></script>
+    <script src="script.js?v=20260710-1"></script>
   </body>
 </html>
