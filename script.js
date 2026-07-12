@@ -34,14 +34,45 @@ const languageState = {
   en: { label: "PT", ariaLabel: "Trocar para português" }
 };
 
+const interfaceCopy = {
+  pt: {
+    menuOpen: "Abrir menu",
+    menuClose: "Fechar menu",
+    themeLight: "Ativar tema claro",
+    themeDark: "Ativar tema escuro",
+    formReady: "Preparando o e-mail para você revisar antes de enviar.",
+    formErrors: {
+      name: "Informe seu nome para eu saber com quem estou falando.",
+      email: "Informe um e-mail válido para eu conseguir responder.",
+      message: "Escreva uma mensagem rápida sobre o projeto ou oportunidade."
+    }
+  },
+  en: {
+    menuOpen: "Open menu",
+    menuClose: "Close menu",
+    themeLight: "Activate light theme",
+    themeDark: "Activate dark theme",
+    formReady: "Preparing the e-mail so you can review it before sending.",
+    formErrors: {
+      name: "Add your name so I know who I am talking to.",
+      email: "Add a valid e-mail so I can reply.",
+      message: "Write a short message about the project or opportunity."
+    }
+  }
+};
+
 const englishContent = {
+  ".skip-link": "Skip to content",
   '.nav-link[href="#home"]': "Home",
   '.nav-link[href="#about"]': "About",
   '.nav-link[href="#process"]': "Process",
+  '.nav-link[href="#services"]': "Help",
   '.nav-link[href="#projects"]': "Projects",
   '.nav-link[href="#skills"]': "Stack",
   '.nav-link[href="#credentials"]': "Credentials",
   '.nav-link[href="#contact"]': "Contact",
+  ".mobile-quick-action-primary span": "Projects",
+  '.mobile-quick-action[href="#contact"] span': "Contact me",
   ".eyebrow": "Full stack developer",
   "#hero-title": "React, Node.js and interfaces designed for real products.",
   "#hero-bio": "I build clear, functional web experiences ready to grow, combining strong front-end work, organized APIs and attention to real screen usage.",
@@ -67,6 +98,17 @@ const englishContent = {
   ".process-card:nth-child(3) p": "I deliver in short blocks with continuous validation to keep quality and rhythm.",
   ".process-card:nth-child(4) h3": "Refinement and launch",
   ".process-card:nth-child(4) p": "I review UX, accessibility and performance before publishing the final version.",
+  "#services .section-kicker": "How I can help",
+  "#services-heading": "From idea to published screen.",
+  "#services .section-heading p": "I can help create, improve or organize parts of your product with a focus on clarity, usability and real delivery.",
+  ".service-card:nth-child(1) h3": "Landing pages and portfolios",
+  ".service-card:nth-child(1) p": "Responsive interfaces that are quick to understand and have a clear call to action.",
+  ".service-card:nth-child(2) h3": "Web systems and e-commerce",
+  ".service-card:nth-child(2) p": "Catalog, account, admin dashboard and purchase journeys organized with more clarity.",
+  ".service-card:nth-child(3) h3": "APIs and integrations",
+  ".service-card:nth-child(3) p": "Back-end, authentication, data consumption and integration between front-end and services.",
+  ".service-card:nth-child(4) h3": "Fixes and improvements",
+  ".service-card:nth-child(4) p": "UX, responsiveness, performance and small bug fixes that block the experience.",
   "#projects .section-kicker": "Featured projects",
   "#projects-heading": "Projects with real delivery.",
   "#projects .section-heading p": "I gathered projects from my GitHub to show how I think, build and deliver clearer solutions.",
@@ -84,12 +126,18 @@ const englishContent = {
   "#project2-desc": "Online store for TCG cards and products, with catalog, cart, checkout, customer account and admin dashboard.",
   "#project3-desc": "Full stack application connecting NGOs with people interested in helping, combining web panel, API and mobile experience.",
   ".project-card:nth-child(1) .status-badge": "Academic project",
+  ".project-card:nth-child(1) .project-signals span:nth-child(1)": "Open source",
+  ".project-card:nth-child(1) .project-signals span:nth-child(2)": "Django",
+  ".project-card:nth-child(1) .project-signals span:nth-child(3)": "Academic",
   ".project-card:nth-child(1) .project-proof": "<strong>Shows:</strong> academic content organization, Django structure and flow-oriented navigation.",
   ".project-card:nth-child(1) .project-impact span:nth-child(1)": "<strong>Problem:</strong> centralize courses, news and student access.",
   ".project-card:nth-child(1) .project-impact span:nth-child(2)": "<strong>Solution:</strong> Django web structure with content-oriented navigation.",
   ".project-card:nth-child(1) .project-impact span:nth-child(3)": "<strong>Result:</strong> organized academic base that is easier to evolve.",
   ".project-card:nth-child(1) .project-links a": "View repository",
   ".project-card:nth-child(2) .status-badge": "E-commerce",
+  ".project-card:nth-child(2) .project-signals span:nth-child(1)": "Live deploy",
+  ".project-card:nth-child(2) .project-signals span:nth-child(2)": "PDF available",
+  ".project-card:nth-child(2) .project-signals span:nth-child(3)": "Real project",
   ".project-card:nth-child(2) .project-proof": "<strong>Shows:</strong> complete product building with front-end, authentication, operation and purchase flow.",
   ".project-card:nth-child(2) .project-impact span:nth-child(1)": "<strong>Problem:</strong> sell TCG products with a clear catalog and reliable journey.",
   ".project-card:nth-child(2) .project-impact span:nth-child(2)": "<strong>Solution:</strong> Next.js, Supabase, cart, checkout and admin area.",
@@ -98,6 +146,9 @@ const englishContent = {
   ".project-card:nth-child(2) .project-links a:nth-of-type(2)": "View repository",
   ".project-card:nth-child(2) .project-links a:nth-of-type(3)": "Download brief",
   ".project-card:nth-child(3) .status-badge": "Full stack",
+  ".project-card:nth-child(3) .project-signals span:nth-child(1)": "Open source",
+  ".project-card:nth-child(3) .project-signals span:nth-child(2)": "Web + Mobile",
+  ".project-card:nth-child(3) .project-signals span:nth-child(3)": "REST API",
   ".project-card:nth-child(3) .project-proof": "<strong>Shows:</strong> web, REST API and mobile integration in a solution with social purpose.",
   ".project-card:nth-child(3) .project-impact span:nth-child(1)": "<strong>Problem:</strong> connect NGOs with people interested in helping.",
   ".project-card:nth-child(3) .project-impact span:nth-child(2)": "<strong>Solution:</strong> REST API with connected web and mobile interfaces.",
@@ -109,19 +160,22 @@ const englishContent = {
   "#contact-heading": "Want to build something with me?",
   "#contact-copy": "Tell me the goal, timeline and context. I will answer clearly how I can help, whether it is freelance work, collaboration or a remote opportunity.",
   "#project-modal-kicker": "Project details",
-  ".project-modal-grid > div:nth-child(1) strong": "Problem",
-  ".project-modal-grid > div:nth-child(2) strong": "Solution",
-  ".project-modal-grid > div:nth-child(3) strong": "Stack",
-  ".project-modal-grid > div:nth-child(4) strong": "Result",
+  ".project-modal-grid > div:nth-child(1) strong": "My role",
+  ".project-modal-grid > div:nth-child(2) strong": "Problem",
+  ".project-modal-grid > div:nth-child(3) strong": "Solution",
+  ".project-modal-grid > div:nth-child(4) strong": "Stack",
+  ".project-modal-grid > div:nth-child(5) strong": "Result",
   '.contact-form label:nth-child(1) span': "Your name",
   '.contact-form label:nth-child(2) span': "Your e-mail",
   '.contact-form label:nth-child(3) span': "Message",
+  "#contact-helper": "The button prepares an e-mail in your default app so you can review it before sending.",
   ".contact-submit": '<i data-lucide="send"></i> Prepare e-mail',
   "#email-text": "Send e-mail",
   "#footer-text": "© 2026 Ricardo Martins. Portfolio built to show projects, process and identity."
 };
 
 const englishAttributes = {
+  ".mobile-quick-actions": { "aria-label": "Quick portfolio actions" },
   '.contact-form input[name="name"]': { placeholder: "What should I call you?" },
   '.contact-form input[name="email"]': { placeholder: "you@email.com" },
   ".contact-form textarea": { placeholder: "Tell me briefly about the project or opportunity." },
@@ -133,6 +187,7 @@ const projectDetails = {
     pt: {
       title: "ProjetoLMS",
       summary: "Projeto acadêmico em Django para organizar cursos, disciplinas, notícias e acesso de alunos.",
+      role: "Estruturei a aplicação, organizei rotas, telas e base de dados para tornar o fluxo acadêmico mais claro.",
       problem: "Conteúdos acadêmicos costumam ficar espalhados, dificultando navegação e manutenção.",
       solution: "Criei uma estrutura web com Django, separando informação, navegação e fluxo de acesso.",
       stack: "Python, Django, SQL, HTML, CSS e organização de rotas.",
@@ -142,6 +197,7 @@ const projectDetails = {
     en: {
       title: "ProjetoLMS",
       summary: "Academic Django project to organize courses, subjects, news and student access.",
+      role: "I structured the application, routes, screens and database foundation to make the academic flow clearer.",
       problem: "Academic content is often scattered, making navigation and maintenance harder.",
       solution: "I built a Django web structure separating information, navigation and access flow.",
       stack: "Python, Django, SQL, HTML, CSS and route organization.",
@@ -153,6 +209,7 @@ const projectDetails = {
     pt: {
       title: "Rare Hunter TCG BR",
       summary: "E-commerce para cartas e produtos TCG com catálogo, carrinho, checkout, conta do cliente e painel administrativo.",
+      role: "Atuei no produto completo: interface, fluxo de compra, autenticação, painel administrativo e base técnica.",
       problem: "A loja precisava apresentar produtos de nicho com clareza e sustentar uma jornada de compra confiável.",
       solution: "Desenvolvi uma aplicação em Next.js com catálogo, fluxo de compra, autenticação, administração e base para integrações reais.",
       stack: "Next.js, React, TypeScript, Supabase, Vitest, Playwright e arquitetura de e-commerce.",
@@ -166,6 +223,7 @@ const projectDetails = {
     en: {
       title: "Rare Hunter TCG BR",
       summary: "E-commerce for TCG cards and products with catalog, cart, checkout, customer account and admin dashboard.",
+      role: "I worked on the full product: interface, purchase flow, authentication, admin dashboard and technical foundation.",
       problem: "The store needed to present niche products clearly and support a reliable purchase journey.",
       solution: "I developed a Next.js application with catalog, purchase flow, authentication, administration and a foundation for real integrations.",
       stack: "Next.js, React, TypeScript, Supabase, Vitest, Playwright and e-commerce architecture.",
@@ -181,6 +239,7 @@ const projectDetails = {
     pt: {
       title: "be-the-hero",
       summary: "Aplicação full stack que conecta ONGs a pessoas interessadas em ajudar.",
+      role: "Organizei a integração entre API, painel web e experiência mobile, mantendo o fluxo consistente entre telas.",
       problem: "ONGs precisam divulgar casos de forma simples para alcançar pessoas dispostas a contribuir.",
       solution: "Estruturei API REST, painel web e experiência mobile conectados em um fluxo único.",
       stack: "Node.js, Express, React, React Native, SQLite e API REST.",
@@ -190,6 +249,7 @@ const projectDetails = {
     en: {
       title: "be-the-hero",
       summary: "Full stack application connecting NGOs with people interested in helping.",
+      role: "I organized the integration between API, web panel and mobile experience while keeping the flow consistent across screens.",
       problem: "NGOs need a simple way to publish cases and reach people willing to contribute.",
       solution: "I structured a REST API, web panel and mobile experience connected in one flow.",
       stack: "Node.js, Express, React, React Native, SQLite and REST API.",
@@ -275,6 +335,14 @@ function getSavedLanguage() {
   return localStorage.getItem("portfolio-language") || "pt";
 }
 
+function getCurrentLanguage() {
+  return body.getAttribute("data-language") === "en" ? "en" : "pt";
+}
+
+function getInterfaceCopy() {
+  return interfaceCopy[getCurrentLanguage()];
+}
+
 function renderIcons() {
   if (window.lucide) {
     window.lucide.createIcons();
@@ -301,7 +369,7 @@ function setMobileMenuState(isOpen) {
   body.classList.toggle("mobile-nav-open", shouldOpen);
   navLinks.setAttribute("aria-hidden", String(!shouldOpen && isMobileMenuLayout()));
   navToggle.setAttribute("aria-expanded", String(shouldOpen));
-  navToggle.setAttribute("aria-label", shouldOpen ? "Fechar menu" : "Abrir menu");
+  navToggle.setAttribute("aria-label", shouldOpen ? getInterfaceCopy().menuClose : getInterfaceCopy().menuOpen);
 
   if (navToggleIcon) {
     navToggleIcon.setAttribute("data-lucide", shouldOpen ? "x" : "menu");
@@ -412,7 +480,7 @@ function applyTheme(theme) {
   themeToggle.setAttribute("aria-pressed", String(nextTheme === "light"));
   themeToggle.setAttribute(
     "aria-label",
-    nextTheme === "dark" ? "Ativar tema claro" : "Ativar tema escuro"
+    nextTheme === "dark" ? getInterfaceCopy().themeLight : getInterfaceCopy().themeDark
   );
   localStorage.setItem("portfolio-theme", nextTheme);
   renderIcons();
@@ -468,6 +536,19 @@ function applyLanguage(language) {
     languageToggle.textContent = languageState[nextLanguage].label;
     languageToggle.setAttribute("aria-label", languageState[nextLanguage].ariaLabel);
     languageToggle.setAttribute("aria-pressed", String(isEnglish));
+  }
+
+  if (navToggle) {
+    const isMenuOpen = siteShell?.classList.contains("is-menu-open") || false;
+    navToggle.setAttribute("aria-label", isMenuOpen ? getInterfaceCopy().menuClose : getInterfaceCopy().menuOpen);
+  }
+
+  if (themeToggle) {
+    const currentTheme = body.getAttribute("data-theme") || "dark";
+    themeToggle.setAttribute(
+      "aria-label",
+      currentTheme === "dark" ? getInterfaceCopy().themeLight : getInterfaceCopy().themeDark
+    );
   }
 
   localStorage.setItem("portfolio-language", nextLanguage);
@@ -662,37 +743,52 @@ function setupProjectDetails() {
 
   const title = document.getElementById("project-modal-title");
   const summary = document.getElementById("project-modal-summary");
+  const role = document.getElementById("project-modal-role");
   const problem = document.getElementById("project-modal-problem");
   const solution = document.getElementById("project-modal-solution");
   const stack = document.getElementById("project-modal-stack");
   const result = document.getElementById("project-modal-result");
   const links = document.getElementById("project-modal-links");
   const closeButton = modal.querySelector(".project-modal-close");
+  let lastFocusedElement = null;
+
+  const focusableSelector = [
+    "a[href]",
+    "button:not([disabled])",
+    "textarea:not([disabled])",
+    "input:not([disabled])",
+    "select:not([disabled])",
+    '[tabindex]:not([tabindex="-1"])'
+  ].join(", ");
 
   function closeModal() {
     modal.hidden = true;
     body.classList.remove("modal-open");
+    lastFocusedElement?.focus?.();
   }
 
   function openModal(projectKey) {
-    const language = body.getAttribute("data-language") === "en" ? "en" : "pt";
+    const language = getCurrentLanguage();
     const detail = projectDetails[projectKey]?.[language];
-    if (!detail || !title || !summary || !problem || !solution || !stack || !result || !links) {
+    if (!detail || !title || !summary || !role || !problem || !solution || !stack || !result || !links) {
       return;
     }
 
+    lastFocusedElement = document.activeElement;
     title.textContent = detail.title;
     summary.textContent = detail.summary;
+    role.textContent = detail.role;
     problem.textContent = detail.problem;
     solution.textContent = detail.solution;
     stack.textContent = detail.stack;
     result.textContent = detail.result;
     links.innerHTML = "";
 
-    detail.links.forEach((link) => {
+    detail.links.forEach((link, index) => {
       const anchor = document.createElement("a");
       anchor.href = link.href;
       anchor.textContent = link.label;
+      anchor.className = index === 0 ? "project-action-primary" : "project-action-secondary";
 
       if (link.download) {
         anchor.setAttribute("download", "");
@@ -709,6 +805,31 @@ function setupProjectDetails() {
     closeButton?.focus();
   }
 
+  function trapFocus(event) {
+    if (event.key !== "Tab" || modal.hidden) {
+      return;
+    }
+
+    const focusableElements = Array.from(modal.querySelectorAll(focusableSelector))
+      .filter((element) => !element.hasAttribute("disabled") && element.offsetParent !== null);
+
+    if (!focusableElements.length) {
+      event.preventDefault();
+      return;
+    }
+
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    if (event.shiftKey && document.activeElement === firstElement) {
+      event.preventDefault();
+      lastElement.focus();
+    } else if (!event.shiftKey && document.activeElement === lastElement) {
+      event.preventDefault();
+      firstElement.focus();
+    }
+  }
+
   document.querySelectorAll("[data-project-detail]").forEach((button) => {
     button.addEventListener("click", () => {
       openModal(button.getAttribute("data-project-detail"));
@@ -722,7 +843,10 @@ function setupProjectDetails() {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && !modal.hidden) {
       closeModal();
+      return;
     }
+
+    trapFocus(event);
   });
 }
 
@@ -831,6 +955,80 @@ function setupContactForm() {
     return;
   }
 
+  const feedback = contactForm.querySelector("[data-contact-feedback]");
+  const fields = {
+    name: contactForm.querySelector('[name="name"]'),
+    email: contactForm.querySelector('[name="email"]'),
+    message: contactForm.querySelector('[name="message"]')
+  };
+
+  function setFieldError(fieldName, message = "") {
+    const field = fields[fieldName];
+    const errorElement = contactForm.querySelector(`[data-field-error="${fieldName}"]`);
+
+    if (!field || !errorElement) {
+      return;
+    }
+
+    field.setAttribute("aria-invalid", String(Boolean(message)));
+    errorElement.textContent = message;
+  }
+
+  function setFeedback(message = "", type = "neutral") {
+    if (!feedback) {
+      return;
+    }
+
+    feedback.textContent = message;
+    feedback.dataset.feedbackType = type;
+  }
+
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  function getFieldError(fieldName, value) {
+    const copy = getInterfaceCopy();
+
+    if (fieldName === "name" && !value) {
+      return copy.formErrors.name;
+    }
+
+    if (fieldName === "email" && !isValidEmail(value)) {
+      return copy.formErrors.email;
+    }
+
+    if (fieldName === "message" && !value) {
+      return copy.formErrors.message;
+    }
+
+    return "";
+  }
+
+  function validateForm(values) {
+    const errors = {};
+
+    Object.entries(values).forEach(([fieldName, value]) => {
+      const error = getFieldError(fieldName, value);
+      if (error) {
+        errors[fieldName] = error;
+      }
+    });
+
+    Object.keys(fields).forEach((fieldName) => {
+      setFieldError(fieldName, errors[fieldName] || "");
+    });
+
+    return errors;
+  }
+
+  Object.entries(fields).forEach(([fieldName, field]) => {
+    field?.addEventListener("blur", () => {
+      const error = getFieldError(fieldName, String(field.value || "").trim());
+      setFieldError(fieldName, error);
+    });
+  });
+
   contactForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -838,6 +1036,13 @@ function setupContactForm() {
     const name = String(formData.get("name") || "").trim();
     const email = String(formData.get("email") || "").trim();
     const message = String(formData.get("message") || "").trim();
+    const errors = validateForm({ name, email, message });
+
+    if (Object.keys(errors).length) {
+      setFeedback("", "error");
+      fields[Object.keys(errors)[0]]?.focus();
+      return;
+    }
 
     const subject = encodeURIComponent(`Contato pelo portfólio - ${name || "novo projeto"}`);
     const body = encodeURIComponent(
@@ -850,7 +1055,10 @@ function setupContactForm() {
       ].join("\n")
     );
 
-    window.location.href = `mailto:${defaultConfig.email}?subject=${subject}&body=${body}`;
+    setFeedback(getInterfaceCopy().formReady, "success");
+    window.setTimeout(() => {
+      window.location.href = `mailto:${defaultConfig.email}?subject=${subject}&body=${body}`;
+    }, 350);
   });
 }
 
@@ -861,6 +1069,7 @@ function setupSimpleAnalytics() {
     ".project-links a",
     ".project-detail-link",
     ".contact-submit",
+    ".mobile-quick-action",
     '.nav-link[href="#contact"]'
   ].join(", ");
 

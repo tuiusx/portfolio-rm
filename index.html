@@ -41,7 +41,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260710-1" />
+    <link rel="stylesheet" href="styles.css?v=20260711-1" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -103,6 +103,7 @@
             <a href="#home" class="nav-link" aria-current="page">Início</a>
             <a href="#about" class="nav-link">Sobre</a>
             <a href="#process" class="nav-link">Processo</a>
+            <a href="#services" class="nav-link">Ajuda</a>
             <a href="#projects" class="nav-link">Projetos</a>
             <a href="#skills" class="nav-link">Stack</a>
             <a href="#credentials" class="nav-link">Credenciais</a>
@@ -110,6 +111,17 @@
           </div>
         </div>
       </nav>
+
+      <div class="mobile-quick-actions" aria-label="Ações rápidas do portfólio">
+        <a href="#projects" class="mobile-quick-action mobile-quick-action-primary">
+          <i data-lucide="layout-grid"></i>
+          <span>Ver projetos</span>
+        </a>
+        <a href="#contact" class="mobile-quick-action">
+          <i data-lucide="send"></i>
+          <span>Falar comigo</span>
+        </a>
+      </div>
 
       <main id="main-content" tabindex="-1">
         <section id="home" class="hero-section" aria-labelledby="hero-name">
@@ -277,6 +289,42 @@
           </div>
         </section>
 
+        <section id="services" class="section-block" aria-labelledby="services-heading">
+          <div class="container">
+            <div class="section-heading reveal-up reveal-on-scroll">
+              <span class="section-kicker">Como posso ajudar</span>
+              <h2 id="services-heading" data-scramble-reveal>Da ideia à tela publicada.</h2>
+              <p class="responsive-copy">
+                Posso entrar para criar, melhorar ou organizar partes do seu produto com foco em clareza,
+                usabilidade e entrega real.
+              </p>
+            </div>
+
+            <div class="service-grid">
+              <article class="service-card reveal-up reveal-on-scroll">
+                <i data-lucide="monitor-smartphone"></i>
+                <h3>Landing pages e portfólios</h3>
+                <p>Interfaces responsivas, rápidas de entender e com chamada clara para ação.</p>
+              </article>
+              <article class="service-card reveal-up reveal-on-scroll">
+                <i data-lucide="shopping-cart"></i>
+                <h3>Sistemas web e e-commerce</h3>
+                <p>Fluxos de catálogo, conta, painel administrativo e jornadas de compra mais organizadas.</p>
+              </article>
+              <article class="service-card reveal-up reveal-on-scroll">
+                <i data-lucide="server-cog"></i>
+                <h3>APIs e integrações</h3>
+                <p>Back-end, autenticação, consumo de dados e integração entre front-end e serviços.</p>
+              </article>
+              <article class="service-card reveal-up reveal-on-scroll">
+                <i data-lucide="sparkles"></i>
+                <h3>Correções e melhorias</h3>
+                <p>Ajustes de UX, responsividade, performance e pequenos bugs que travam a experiência.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
         <section id="projects" class="section-block section-alt" aria-labelledby="projects-heading">
           <div class="container">
             <div class="section-heading reveal-up reveal-on-scroll">
@@ -315,16 +363,16 @@
                   <span class="tag tag-muted">Checkout</span>
                 </div>
                 <div class="project-links featured-links">
-                  <button class="project-detail-link" type="button" data-project-detail="rare-hunter">
+                  <button class="project-detail-link project-action-primary" type="button" data-project-detail="rare-hunter" aria-label="Ver detalhes do projeto Rare Hunter TCG BR">
                     Ver detalhes
                   </button>
-                  <a href="https://rarehuntertcgbr.com.br" target="_blank" rel="noreferrer">
+                  <a class="project-action-secondary" href="https://rarehuntertcgbr.com.br" target="_blank" rel="noreferrer">
                     Acessar site
                   </a>
-                  <a href="https://github.com/tuiusx/rarehuntertcgbr" target="_blank" rel="noreferrer">
+                  <a class="project-action-secondary" href="https://github.com/tuiusx/rarehuntertcgbr" target="_blank" rel="noreferrer">
                     Ver repositório
                   </a>
-                  <a href="assets/downloads/rare-hunter-projeto.pdf" download>
+                  <a class="project-action-secondary" href="assets/downloads/rare-hunter-projeto.pdf" download>
                     Baixar apresentação
                   </a>
                 </div>
@@ -349,6 +397,11 @@
                     <i data-lucide="graduation-cap"></i>
                   </div>
                 </div>
+                <div class="project-signals" aria-label="Indicadores do projeto ProjetoLMS">
+                  <span>Código aberto</span>
+                  <span>Django</span>
+                  <span>Acadêmico</span>
+                </div>
                 <h3 id="project1-title">ProjetoLMS</h3>
                 <p id="project1-desc" class="project-summary">
                   Projeto acadêmico em Django voltado à organização de cursos, disciplinas, notícias e acesso de alunos em uma experiência web mais estruturada.
@@ -370,10 +423,11 @@
                   <span class="tag tag-muted">SQL</span>
                 </div>
                 <div class="project-links">
-                  <button class="project-detail-link" type="button" data-project-detail="projetolms">
+                  <button class="project-detail-link project-action-primary" type="button" data-project-detail="projetolms" aria-label="Ver detalhes do projeto ProjetoLMS">
                     Ver detalhes
                   </button>
                   <a
+                    class="project-action-secondary"
                     href="https://github.com/tuiusx/ProjetoLMS"
                     target="_blank"
                     rel="noreferrer"
@@ -401,6 +455,11 @@
                     <i data-lucide="shopping-bag"></i>
                   </div>
                 </div>
+                <div class="project-signals" aria-label="Indicadores do projeto Rare Hunter TCG BR">
+                  <span>Deploy online</span>
+                  <span>PDF disponível</span>
+                  <span>Projeto real</span>
+                </div>
                 <h3 id="project2-title">Rare Hunter TCG BR</h3>
                 <p id="project2-desc" class="project-summary">
                   Loja virtual para cartas e produtos TCG, com catálogo, carrinho, checkout, conta do cliente e painel administrativo.
@@ -427,10 +486,11 @@
                   <span class="tag tag-muted">Checkout</span>
                 </div>
                 <div class="project-links">
-                  <button class="project-detail-link" type="button" data-project-detail="rare-hunter">
+                  <button class="project-detail-link project-action-primary" type="button" data-project-detail="rare-hunter" aria-label="Ver detalhes do projeto Rare Hunter TCG BR">
                     Ver detalhes
                   </button>
                   <a
+                    class="project-action-secondary"
                     href="https://rarehuntertcgbr.com.br"
                     target="_blank"
                     rel="noreferrer"
@@ -439,6 +499,7 @@
                     Acessar site
                   </a>
                   <a
+                    class="project-action-secondary"
                     href="https://github.com/tuiusx/rarehuntertcgbr"
                     target="_blank"
                     rel="noreferrer"
@@ -447,6 +508,7 @@
                     Ver repositório
                   </a>
                   <a
+                    class="project-action-secondary"
                     href="assets/downloads/rare-hunter-projeto.pdf"
                     download
                     aria-label="Baixar apresentação do projeto Rare Hunter TCG BR"
@@ -472,6 +534,11 @@
                   <div class="project-icon">
                     <i data-lucide="shield"></i>
                   </div>
+                </div>
+                <div class="project-signals" aria-label="Indicadores do projeto be-the-hero">
+                  <span>Código aberto</span>
+                  <span>Web + Mobile</span>
+                  <span>API REST</span>
                 </div>
                 <h3 id="project3-title">be-the-hero</h3>
                 <p id="project3-desc" class="project-summary">
@@ -499,10 +566,11 @@
                   <span class="tag tag-muted">API REST</span>
                 </div>
                 <div class="project-links">
-                  <button class="project-detail-link" type="button" data-project-detail="be-the-hero">
+                  <button class="project-detail-link project-action-primary" type="button" data-project-detail="be-the-hero" aria-label="Ver detalhes do projeto be-the-hero">
                     Ver detalhes
                   </button>
                   <a
+                    class="project-action-secondary"
                     href="https://github.com/tuiusx/be-the-hero"
                     target="_blank"
                     rel="noreferrer"
@@ -526,6 +594,10 @@
             <h2 id="project-modal-title"></h2>
             <p id="project-modal-summary"></p>
             <div class="project-modal-grid">
+              <div>
+                <strong>Minha parte</strong>
+                <p id="project-modal-role"></p>
+              </div>
               <div>
                 <strong>Problema</strong>
                 <p id="project-modal-problem"></p>
@@ -834,19 +906,26 @@
               Me conte o objetivo, prazo e contexto. Eu respondo com clareza sobre como posso ajudar,
               seja em um freela, colaboração ou oportunidade remota.
             </p>
-            <form class="contact-form" data-contact-form>
-              <label>
+            <form class="contact-form" data-contact-form novalidate>
+              <label for="contact-name">
                 <span>Seu nome</span>
-                <input type="text" name="name" autocomplete="name" placeholder="Como posso te chamar?" required />
+                <input id="contact-name" type="text" name="name" autocomplete="name" placeholder="Como posso te chamar?" aria-describedby="contact-name-error" required />
+                <small id="contact-name-error" class="field-error" data-field-error="name"></small>
               </label>
-              <label>
+              <label for="contact-email">
                 <span>Seu e-mail</span>
-                <input type="email" name="email" autocomplete="email" placeholder="voce@email.com" required />
+                <input id="contact-email" type="email" name="email" autocomplete="email" placeholder="voce@email.com" aria-describedby="contact-email-error" required />
+                <small id="contact-email-error" class="field-error" data-field-error="email"></small>
               </label>
-              <label class="contact-form-full">
+              <label class="contact-form-full" for="contact-message">
                 <span>Mensagem</span>
-                <textarea name="message" rows="4" placeholder="Me conte rapidamente sobre o projeto ou oportunidade." required></textarea>
+                <textarea id="contact-message" name="message" rows="4" placeholder="Me conte rapidamente sobre o projeto ou oportunidade." aria-describedby="contact-message-error" required></textarea>
+                <small id="contact-message-error" class="field-error" data-field-error="message"></small>
               </label>
+              <p class="contact-helper contact-form-full" id="contact-helper">
+                O botão prepara um e-mail no seu aplicativo padrão para você revisar antes de enviar.
+              </p>
+              <div class="form-feedback contact-form-full" data-contact-feedback role="status" aria-live="polite"></div>
               <button class="button button-primary contact-submit" type="submit">
                 <i data-lucide="send"></i>
                 Preparar e-mail
@@ -900,6 +979,6 @@
       </footer>
     </div>
 
-    <script src="script.js?v=20260710-1"></script>
+    <script src="script.js?v=20260711-1"></script>
   </body>
 </html>
